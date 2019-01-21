@@ -30,6 +30,10 @@ class Remove_Linked_List_Elements{
                 nextNode = nextNode.next;
             }
         }
+
+        if (head.val == val && head.next == null){
+            head = null;
+        }
         return head;
     }
 
