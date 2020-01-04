@@ -1,7 +1,7 @@
 package extra;
 
 public interface LambInt1 {
-    public void apply1();
+    public void apply1(int i);
    // public void apply2(String arg1);
   //  public void apply2(int arg1);
 
