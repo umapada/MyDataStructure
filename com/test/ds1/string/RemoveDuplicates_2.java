@@ -1,37 +1,41 @@
 package com.test.ds1.string;
 
+import java.util.Arrays;
+
 public class RemoveDuplicates_2 {
 
 	public static void main(String[] args) {
 		
 		String str= "This is test";
-		
-		removeDuplicates(str.toCharArray());
+
+		System.out.println(removeDuplicate(str.toCharArray()));
 
 	}
 
-	public static void removeDuplicates(char[] str) {
-		if (str == null)
-			return;
-		int len = str.length;
-		if (len < 2)
-			return;
-
-		int tail = 1;
-
-		for (int i = 1; i < len; ++i) {
+	static String removeDuplicate(char str[]) {
+		// Used as index in the modified string
+		int index = 0;
+		int n = str.length;
+		// Traverse through all characters
+		for (int i = 0; i < n; i++)
+		{
+			// Check if str[i] is present before it
 			int j;
-			for (j = 0; j < tail; ++j) {
+			for (j = 0; j < i; j++)
+			{
 				if (str[i] == str[j])
+				{
+					System.out.println(str[i]);
 					break;
+				}
 			}
-			if (j == tail) {
-				str[tail] = str[i];
-				++tail;
+			// If not present, then add it to result.
+			if (j == i)
+			{
+				str[index++] = str[i];
 			}
-			System.out.println(str);
 		}
-		str[tail] = 0;
+		return String.valueOf(Arrays.copyOf(str, index));
 	}
 
 }

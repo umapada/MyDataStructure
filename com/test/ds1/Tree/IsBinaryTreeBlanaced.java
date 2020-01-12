@@ -32,7 +32,7 @@ class IsBinaryTreeBlanaced
      return false;
  }
 
- /* UTILITY FUNCTIONS TO TEST isBalanced() FUNCTION */
+ /* UTILITY FUNCTIONS TO TEST1 isBalanced() FUNCTION */
  /*  The function Compute the "height" of a tree. Height is the
      number of nodes along the longest path from the root node
      down to the farthest leaf node.*/

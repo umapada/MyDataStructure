@@ -1,5 +1,7 @@
 package com.test.ds1.array;
 
+import java.util.Arrays;
+
 /**
  * Given an array A of N elements. Find the majority element in the array. A majority element in an array A of size N
  * is an element that appears more than N/2 times in the array.
@@ -11,7 +13,9 @@ public class MajorityElement {
 
         int num [] = {2,2,3,3,2,3,3};
 
-        System.out.println(majority(num));
+        //System.out.println(majority(num));
+
+        Arrays.stream(num).forEach(System.out::println);
     }
 
     static int majority(int [] numbers){
