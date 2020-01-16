@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
-public class PPPP {
+public class AmazonQ_Unsolved_3 {
 
 	public static void main(String[] args) {
 		List<String> logLines = new ArrayList<>();

@@ -1,5 +1,7 @@
 package com.test.ds1.array;
 //We should ignore the sum of the previous n-1 elements if nth element is greater than the sum
+
+//Alternate to Kadane, DP ?
 public class MaxSubArray {
 
 	public static void main(String[] args) {

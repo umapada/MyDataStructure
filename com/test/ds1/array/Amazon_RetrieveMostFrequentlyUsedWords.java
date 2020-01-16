@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class RetrieveMostFrequentlyUsedWords {
+public class Amazon_RetrieveMostFrequentlyUsedWords {
 
 	public static void main(String[] args) {
 		String literatureText = "Jack and Jill went to the market to buy bread and cheese. Cheese is Jack  favorate food.";

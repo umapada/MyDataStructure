@@ -5,7 +5,7 @@ package com.test.ds1.array;
 // with sum exactly equal to k.
 import java.util.HashMap;
         import java.util.Map;
-
+//TODO
 public class SubArrayAllSumK{
 
     // Function to find number of subarrays

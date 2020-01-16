@@ -3,7 +3,8 @@ package com.test.ds1.array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+//Find all three elements in an array, whose sum is zero
+//TODO
 public class Three_Sum_Zero {
 
 

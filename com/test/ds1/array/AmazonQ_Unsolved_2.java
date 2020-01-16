@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-public class PPP {
+public class AmazonQ_Unsolved_2 {
 
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<>();

@@ -1,13 +1,44 @@
 package com.test.ds1.array;
 
-import java.math.BigDecimal;
 import java.util.*;
 
+
+/**
+ * An integer is given in an array, which reoresent each element as digit. Add "1" to the given number
+ */
+
+/**
+ * Solution1 => Convert array to integer, add one, convert back to array
+ */
 public class AddOneToArray {
 
     public static void main(String[] args) {
         int i[] = {9, 9};
-        int[] p = plusOne(i);
+//        int[] p = plusOne(i);
+//
+//        Arrays.stream(p).forEach(System.out::println);
+        double res = 0;
+        int count = 0;
+        for (int k = i.length -1 ; k >= 0; k --){
+
+            res = res +  Math.pow(10, count++) * i[k];
+        }
+
+        res = res + 1;
+        int ret = (int)res;
+
+        String s = String.valueOf(ret);
+
+        int [] finalRes = new int[s.length()];
+
+        count = s.length()-1;
+        while (ret != 0){
+            finalRes[count--] = ret %10;
+            ret  = ret/10;
+        }
+
+        Arrays.stream(finalRes).forEach(System.out::println);
+
     }
 
     public static int[] plusOne(int[] digits) {

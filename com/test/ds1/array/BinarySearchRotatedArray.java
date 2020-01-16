@@ -1,6 +1,8 @@
 package com.test.ds1.array;
 
-
+/**
+ * Search an element in a sorted array, which rotated n times
+ */
 
 public class BinarySearchRotatedArray {
 
