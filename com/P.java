@@ -1,67 +1,39 @@
 package com;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+
 
 public class P {
+
+
 
     // Driver code
     public static void main(String[] args)
     {
 
-        String a1 = "ABCDGH";
-        String a2 = "ACDGHR";
+        int nums [] = {10, 23, 45, 6};
 
-        String str = longestCommonSubstring(a1,a2);
-
-        System.out.println(str);
+        int a = findKthLargest(nums, 3);
 
 
     }
 
+    public static int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> q = new PriorityQueue<Integer>(k);
+        for(int i: nums){
+            q.offer(i);
 
-    private static String longestCommonSubstring(String a1, String a2){
-        String retString = "";
-        int maxLength = 0;
-        char[] c1 = a1.toCharArray();
-        char [] c2 = a2.toCharArray();
-
-        Map<Character, Integer> map = new HashMap<>();
-
-        for(int i=0; i < c1.length; i ++){
-            map.put(c1[i], i);
-        }
-        boolean found = false;
-        int index = 0;
-        String tempString = "";
-        for(int i=0; i < c2.length; i++){
-            if(map.get(c2[i]) != null){
-                found = true;
-                index = i;
-                while (found){
-                        tempString = tempString + c2[index++];
-                        if(map.get(c2[index]) != null && (map.get(c2[index]) != map.get(c2[index-1]) + 1 )){
-                            found = false;
-                        }
-                        if(map.get(c2[index]) == null){
-                            break;
-                        }
-                        if(index >= c2.length){
-                            break;
-                        }
-                }
-
-                if(retString.length() < tempString.length()){
-                    retString = tempString;
-                }
-                tempString = "";
-
+            if(q.size()>k){
+                q.poll();
             }
         }
-        return  retString;
+        int ret =  q.peek();
+        return ret;
     }
-
 
 
 }

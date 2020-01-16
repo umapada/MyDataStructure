@@ -1,4 +1,4 @@
-package com.test.ds1.stackqueu;
+package com.test.ds1.stackqueue;
 
 //Java program to sort a stack using 
 //a auxiliary stack.

@@ -1,10 +1,18 @@
 package com;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
+
+/**
+ * Find the first non-repeating character from a stream of characters
+ * Given a stream of characters, find the first non-repeating character from stream. You need to tell the first
+ * non-repeating character in O(1) time at any moment. If we follow the first approach discussed here, then we
+ * need to store the stream so that we can traverse it one more time to find the first non-repeating character
+ * at any moment. If we use extended approach discussed in the same post, we need to go through the count array
+ * every time first non-repeating element is queried. We can find the first non-repeating character from stream
+ * at any moment without traversing any array.
+ */
+
 
 public class FindFirstNonRepeatingChar {
 

@@ -1,4 +1,4 @@
-package com.test.ds1.stackqueu;
+package com.test.ds1.stackqueue;
 
 /**
  * Design a stack that supports getMin() in O(1) time and O(1) extra space

@@ -1,4 +1,4 @@
-package com.test.ds1.stackqueu;
+package com.test.ds1.stackqueue;
 // Implementation of Deque using circular array
 
 //Java implementation of De-queue using circular

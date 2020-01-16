@@ -2,12 +2,12 @@ package com.test.ds1.Tree;
 
 /* A binary tree node has data, pointer to left child,
 and a pointer to right child */
-class TreeNode
+public class TreeNode
 {
- int data;
- TreeNode left, right, parent;
+ public int data;
+ public TreeNode left, right, parent;
     int hd; //Horizontal Distance
- TreeNode(int d)
+ public TreeNode(int d)
  {
      data = d;
      left = right = null;
