@@ -9,7 +9,7 @@ package com.test.ds1.array;
  * Input: A[] = {-7, 1, 5, 2, -4, 3, 0}
  * Output: 3
  * 3 is an equilibrium index, because:
- * A[0] + A[1] + A[2] = A[4] + A[5] + A[6]
+ * A[0] + A[1] + A[2] =  A[4] + A[5] + A[6]
  *
  *
  *

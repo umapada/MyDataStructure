@@ -18,7 +18,7 @@ class NthSmallestElementInBST {
         this.root = this.insertRec(this.root, data);
     }
      
-    /* A utility function to insert a new node 
+    /* A utility function to insert a new node
     with given key in BST */
     TreeNode insertRec(TreeNode node, int data)
     {   

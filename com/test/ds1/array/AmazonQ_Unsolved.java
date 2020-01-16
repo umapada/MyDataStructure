@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 //CLASS BEGINS, THIS CLASS IS REQUIRED
-public class A {
+public class AmazonQ_Unsolved {
 	// METHOD SIGNATURE BEGINS, THIS METHOD IS REQUIRED
 	static List<String> retrieveMostFrequentlyUsedWords(String literatureText, List<String> wordsToExclude) {
 		if (literatureText == null || literatureText.length() == 0) {
