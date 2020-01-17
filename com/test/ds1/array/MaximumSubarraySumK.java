@@ -23,12 +23,20 @@ import java.util.HashMap;
 //TODO
 public class MaximumSubarraySumK {
 
-    public int maxSubArrayLen(int[] nums, int k) {
+
+    public static void main(String[] args) {
+        int num[] = {3,2,3,1,4,-1,2,-2,1,1,3};
+        int out = maxSubArrayLen(num, 8);
+
+        System.out.println(out);
+    }
+
+    public static int maxSubArrayLen(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
         int max = 0;
 
-        int sum=0;
+        int sum = 0;
         for(int i=0; i<nums.length; i++){
             sum += nums[i];
 

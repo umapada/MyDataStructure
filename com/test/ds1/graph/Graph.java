@@ -14,15 +14,14 @@ public class Graph{
 	{
 		adjacencyList=(ArrayList<Integer>[])new ArrayList[noOfVertices+1];
 		this.noOfVertices=noOfVertices;
-		for(int i=0;i<(noOfVertices+1);i++)
-			adjacencyList[i]=new ArrayList<Integer>();
+		for(int i=0; i < noOfVertices + 1; i++)
+			adjacencyList[i] = new ArrayList<Integer>();
 	}
 
 	/**
 	 * 
 	 * @param u
 	 * @param v
-	 * @param w
 	 * To add edges to the adjacency list in graph
 	 */
 	public void addEdge(int u, int v)
@@ -114,7 +113,6 @@ public class Graph{
 	 * Main function to test the graph
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		Graph graph=new Graph(3);
 		graph.addEdge(1, 2);

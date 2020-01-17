@@ -10,8 +10,8 @@ import java.util.Iterator;
 public class SingleNumber {
 
     public static void main(String[] args) {
-        int [] A = {2,5,3,4,7,8,3};
-        System.out.println(singleNumber_1(A));
+        int [] A = {2,5,2,4,7,4,7};
+        System.out.println(singleNumber_2(A));
     }
 
 
@@ -30,7 +30,12 @@ public class SingleNumber {
                 set.remove(n);
         }
         Iterator<Integer> it = set.iterator();
-        return it.next();
+        int p = 0;
+        for (Integer x : set) {
+            p=x;
+        }
+
+        return p;
     }
 
   /*  public static int singleNumber8(int[] elements)

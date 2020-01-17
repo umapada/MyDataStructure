@@ -35,17 +35,13 @@ import java.util.Set;
 public class PairDivisibleByK {
 
     public static void main(String[] args) {
-        int arr[] = {1005, 7, 95, 1, 193, 99,4, 97};
+
+        int arr[] = {1005, 7, 95, 1, 193, 99, 4, 97};
         int k = 100;
-
-        System.out.println(isDivisible(arr,k));
-
-
-
-
+        System.out.println(isDivisible(arr, k));
     }
 
-static boolean isDivisible(int [] arr, int k){
+    static boolean isDivisible(int[] arr, int k) {
 //        boolean isDivisible = false;
 //        Set<Integer> set = new HashSet<>();
 //
@@ -55,31 +51,31 @@ static boolean isDivisible(int [] arr, int k){
 //    System.out.println(set);
 //        return isDivisible;
 //}
-    //int arr[] = [1005, 7, 95, 1, 193, 99];
-   // System.out.println(is_made_of_pairs_divisible_by_k(arr, 100));
+        //int arr[] = [1005, 7, 95, 1, 193, 99];
+        // System.out.println(is_made_of_pairs_divisible_by_k(arr, 100));
 
-    int modCounts[] = new int[k];
+        int modCounts[] = new int[k];
 
-    // Count all the remainder
-    for (int i: arr){
-        modCounts[ i%k ] ++;
-    }
+        // Count all the remainder
+        for (int i : arr) {
+            modCounts[i % k]++;
+        }
 
-    //If mid of the remainder is not even, then return false
-    if( modCounts [k /2] % 2 != 0){
-        return false;
-    }
-    // If first element is not even, then return false
-    if(modCounts[0] % 2 != 0){
-        return false;
-    }
-
-    // Match each ith element with its respective k-i th element
-    for (int i=1; i <= k/2; i++){
-        if(modCounts[i] != modCounts[k-i]){
+        //If mid of the remainder is not even, then return false
+        if (modCounts[k / 2] % 2 != 0) {
             return false;
         }
+        // If first element is not even, then return false
+        if (modCounts[0] % 2 != 0) {
+            return false;
+        }
+
+        // Match each ith element with its respective k-i th element
+        for (int i = 1; i <= k / 2; i++) {
+            if (modCounts[i] != modCounts[k - i]) {
+                return false;
+            }
+        }
+        return true;
     }
-    return true;
-}
 }

@@ -1,6 +1,9 @@
-package com.test.ds1.string;
+package com.test.ds1.Bit_Operation;
 
-public class SubsetOfSet {
+/**
+ * Print all superset of a set
+ */
+public class SuperSetOfSet {
 
 	public static void main(String[] args) {
 		char set[] = {'a', 'b', 'c'};

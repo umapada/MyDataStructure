@@ -32,7 +32,6 @@ public class Candy {
 
         int[] candies = new int[ratings.length];
         candies[0] = 1;
-
         //from let to right
         for (int i = 1; i < ratings.length; i++) {
             if (ratings[i] > ratings[i - 1]) {
@@ -42,7 +41,6 @@ public class Candy {
                 candies[i] = 1;
             }
         }
-
         int result = candies[ratings.length - 1];
 
         //from right to left

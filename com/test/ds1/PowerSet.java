@@ -26,7 +26,7 @@ public class PowerSet {
 
         long numberOfElements = (long)Math.pow(2,set.size());
 
-        for (int i=0; i < numberOfElements; i++){
+        for (int i=0; i < (1<< set.size()); i++){
 
             HashSet<Integer> tempSet = new HashSet<>();
 

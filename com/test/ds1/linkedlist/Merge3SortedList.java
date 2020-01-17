@@ -42,7 +42,7 @@ public class Merge3SortedList {
             pq.add(new ListData(c.val, c));
         }
 
-        while (a != null || b != null || c != null){
+        while (!pq.isEmpty()){
 
             ListData listData = pq.poll();
             if(listData.listNode.next != null){
@@ -52,20 +52,6 @@ public class Merge3SortedList {
             dummyNode.next = new ListNode(listData.data);
             dummyNode = dummyNode.next;
 
-            if(a!= null){
-                a = a .next;
-            }
-            if(b != null){
-                b = b.next;
-            }
-            if(c != null){
-                c = c.next;
-            }
-        }
-
-        while (!pq.isEmpty()){
-            dummyNode.next = new ListNode(pq.poll().data);
-            dummyNode = dummyNode.next;
         }
 
         return headNode.next;

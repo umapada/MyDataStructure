@@ -1,5 +1,10 @@
 package com.test.ds1.array;
 
+/**
+ * Split an array into two, such that sum of both sub array will be equal.
+ */
+
+
 /*
 
 Examples:
@@ -36,7 +41,7 @@ isSubsetSum (arr, n, sum/2) = isSubsetSum (arr, n-1, sum/2) ||
 
 //Time Complexity: O(sum*n)
 //Auxiliary Space: O(sum*n)
-//TODO
+//Important
 public class Split2SubsetArray {
 
     // A utility function that returns true if there is a

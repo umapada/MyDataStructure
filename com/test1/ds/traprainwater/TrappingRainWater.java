@@ -23,8 +23,6 @@ public class TrappingRainWater {
 
         System.out.printf("Tapped Rain Water= " + trap );
     }
-
-
     public static int trap(int[] height) {
         int result = 0;
 
@@ -45,7 +43,6 @@ public class TrappingRainWater {
                 max = height[i];
             }
         }
-
         //scan from right to left
         max = height[height.length-1];
         right[height.length-1]=height[height.length-1];
@@ -57,12 +54,10 @@ public class TrappingRainWater {
                 max = height[i];
             }
         }
-
         //calculate totoal
         for(int i=0; i<height.length; i++){
             result+= Math.min(left[i],right[i])-height[i];
         }
-
         return result;
     }
 

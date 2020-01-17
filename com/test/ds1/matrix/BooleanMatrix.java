@@ -34,7 +34,7 @@ should be changed to following
 
 */
 
-
+//Important
 public class BooleanMatrix {
 /*
 This method is a space optimized version of above method 1. This method uses the first row and first column of
@@ -124,6 +124,8 @@ submatrix (matrix excluding first row and first column) of size (M-1)*(N-1).
         int mat[][] = {{1, 0, 0, 1},
                 {0, 0, 1, 0},
                 {0, 0, 0, 0}};
+
+
 
         System.out.println("Input Matrix :");
         printMatrix(mat);

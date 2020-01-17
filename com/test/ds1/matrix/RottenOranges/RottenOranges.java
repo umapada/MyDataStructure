@@ -94,23 +94,23 @@ public class RottenOranges
             System.out.println("Time required for all oranges to rot = " + ans);
 
 
-        List<Integer> llist = new ArrayList<>();
-
-        llist.add(2);
-        llist.remove(0);
-
-        Queue<Integer> queue = new LinkedList<>();
-
-        queue.add(4);
-        queue.remove(4);
-
-        List<Integer> list = new LinkedList<>();
-
-        list.add(2);
-        list.add(3);
-        list.add(4);
-
-        list.remove("2");
+//        List<Integer> llist = new ArrayList<>();
+//
+//        llist.add(2);
+//        llist.remove(0);
+//
+//        Queue<Integer> queue = new LinkedList<>();
+//
+//        queue.add(4);
+//        queue.remove(4);
+//
+//        List<Integer> list = new LinkedList<>();
+//
+//        list.add(2);
+//        list.add(3);
+//        list.add(4);
+//
+//        list.remove("2");
 
     }
 

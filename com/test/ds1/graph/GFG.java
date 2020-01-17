@@ -8,6 +8,7 @@ public class GFG {
 
 	// Function to find smallest window containing
 	// all characters of 'pat'
+
 	static String findSubString(String str, String pat) {
 		int len1 = str.length();
 		int len2 = pat.length();

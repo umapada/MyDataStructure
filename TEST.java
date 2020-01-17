@@ -8,6 +8,8 @@ import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
 public class TEST {
+    private List<String> names;
+
     public static void main(String[] args) throws  Exception{
 //        Optional<String> empty = Optional.ofNullable(null);
 //
@@ -43,7 +45,7 @@ public class TEST {
         List square = (List) number.stream().map(x -> x*x).collect(Collectors.toList());
         System.out.println(square);
 
-        List<String> names = Arrays.asList("Reflection","Collection","Stream");
+        List<String> names = names;
         List result = names.stream().filter(s->s.startsWith("R")).collect(Collectors.toList());
         System.out.println(result);
 

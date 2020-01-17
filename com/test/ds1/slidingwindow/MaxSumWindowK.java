@@ -28,7 +28,7 @@ array is 2.
 // O(n) solution for finding
 // maximum sum of a subarray
 // of size k
-
+// Important
 public class MaxSumWindowK {
 
     // Returns maximum sum in
