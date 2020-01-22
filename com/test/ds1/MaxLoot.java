@@ -56,7 +56,6 @@ class MaxLoot
             return hval[0];
         if (n == 2)
             return Math.max(hval[0], hval[1]);
-
         // dp[i] represent the maximum value stolen
         // so far after reaching house i.
         int[] dp = new int[n];

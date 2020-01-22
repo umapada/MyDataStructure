@@ -11,6 +11,10 @@ public class TEST {
     private List<String> names;
 
     public static void main(String[] args) throws  Exception{
+
+
+
+
 //        Optional<String> empty = Optional.ofNullable(null);
 //
 //        System.out.println(empty.isPresent());
@@ -33,35 +37,34 @@ public class TEST {
 //        System.out.println("Done - 2");
 //        System.out.println(result);
 
-        List<String> list = new ArrayList<>();
-        list.add("hello 1");
-        list.add("hello 2");
-        list.add("hello 3");
-        list.add("hello 4");
-
-        list.forEach(a -> System.out.println(a));
-
-        List<Integer> number = Arrays.asList(2,3,4,5);
-        List square = (List) number.stream().map(x -> x*x).collect(Collectors.toList());
-        System.out.println(square);
-
-        List<String> names = names;
-        List result = names.stream().filter(s->s.startsWith("R")).collect(Collectors.toList());
-        System.out.println(result);
-
-        List result1 = names.stream().sorted().collect(Collectors.toList());
-        System.out.println(result1);
-
-        System.out.println(Thread.holdsLock(result1));
-        Thread.holdsLock(result1);
+//        List<String> list = new ArrayList<>();
+//        list.add("hello 1");
+//        list.add("hello 2");
+//        list.add("hello 3");
+//        list.add("hello 4");
+//
+//        list.forEach(a -> System.out.println(a));
+//
+//        List<Integer> number = Arrays.asList(2,3,4,5);
+//        List square = (List) number.stream().map(x -> x*x).collect(Collectors.toList());
+//        System.out.println(square);
+//
+//        List<String> names = names;
+//        List result = names.stream().filter(s->s.startsWith("R")).collect(Collectors.toList());
+//        System.out.println(result);
+//
+//        List result1 = names.stream().sorted().collect(Collectors.toList());
+//        System.out.println(result1);
+//
+//        System.out.println(Thread.holdsLock(result1));
+//        Thread.holdsLock(result1);
 
     }
 }
 
 class SquareCalculator {
 
-   private ExecutorService executor
-           = Executors.newSingleThreadExecutor();
+   private ExecutorService executor = Executors.newSingleThreadExecutor();
 
    public Future<Integer> calculate(Integer input) {
        return executor.submit(() -> {

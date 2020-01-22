@@ -18,4 +18,10 @@ public class FactorialTask implements Callable<Integer> {
 
         return fact;
     }
+
+
+    public static void main(String[] args) throws Exception{
+        FactorialTask ft = new FactorialTask(5);
+        System.out.println(ft.call());
+    }
 }

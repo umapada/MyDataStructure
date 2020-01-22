@@ -52,7 +52,7 @@ public class NextGreaterElement {
         for(int i =1; i < n.length; i ++){
             index = i;
             while(n[i] < stack.peek() && index < n.length){
-                stack.push(index++);
+                stack.push(n[index++]);
             }
 
             while(!stack.empty() && n[i] > stack.peek() ){

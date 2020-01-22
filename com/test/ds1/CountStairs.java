@@ -55,7 +55,6 @@ public class CountStairs{
                     findStep(n - 2) +
                     findStep(n - 1);
     }
-
     // Driver function
     public static void main(String argc[]){
         int n = 4;

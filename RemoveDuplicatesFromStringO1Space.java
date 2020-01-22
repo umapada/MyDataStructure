@@ -5,7 +5,6 @@ public class RemoveDuplicatesFromStringO1Space {
 
     public static void main(String[] args) {
 
-
         // Method 1
         String str = "geeksforgeeks";
         char[] chr = str.toCharArray();
@@ -28,10 +27,7 @@ public class RemoveDuplicatesFromStringO1Space {
         }
         System.out.println( String.valueOf(Arrays.copyOf(chr,index)));
 
-
-
         //Method 2
-
         chr = str.toCharArray();
 
         int bit = 0;
