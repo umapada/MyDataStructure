@@ -7,11 +7,8 @@ public class P {
 
     public static void main(String[] args) {
 
-Scanner scan = new Scanner(System.in);
-
-int i = scan.nextInt();
-
-
+        int input = '9';
+        System.out.println("10 " + (char)(254) + (char)61 + " 100") ;
 
 
     }
