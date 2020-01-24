@@ -1,4 +1,4 @@
-package com.test.ds1;
+package com.test.ds1.DynamicProgramming;
 
 /*
 
