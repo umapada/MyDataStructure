@@ -19,6 +19,11 @@ public class P {
 
         int a = findKthLargest(nums, 3);
 
+        System.out.println(1<<2);
+
+
+
+
 
     }
 

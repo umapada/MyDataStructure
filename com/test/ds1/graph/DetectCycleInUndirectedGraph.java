@@ -68,16 +68,14 @@ public class DetectCycleInUndirectedGraph {
         {
             i = it.next();
 
-            // If an adjacent is not visited, then recur for that
-            // adjacent
+            // If an adjacent is not visited, then recur for that adjacent
             if (!visited[i])
             {
                 if (isCyclicUtil(i, visited, v))
                     return true;
             }
 
-            // If an adjacent is visited and not parent of current
-            // vertex, then there is a cycle.
+            // If an adjacent is visited and not parent of current vertex, then there is a cycle.
             else if (i != parent)
                 return true;
         }
@@ -93,12 +91,14 @@ public class DetectCycleInUndirectedGraph {
         for (int i = 0; i < V; i++)
             visited[i] = false;
 
-        // Call the recursive helper function to detect cycle in
-        // different DFS trees
-        for (int u = 0; u < V; u++)
-            if (!visited[u]) // Don't recur for u if already visited
-                if (isCyclicUtil(u, visited, -1))
+        // Call the recursive helper function to detect cycle in different DFS trees
+        for (int u = 0; u < V; u++) {
+            if (!visited[u]) { // Don't recur for u if already visited
+                if (isCyclicUtil(u, visited, -1)) {
                     return true;
+                }
+            }
+        }
 
         return false;
     }

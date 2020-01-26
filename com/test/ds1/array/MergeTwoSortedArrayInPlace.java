@@ -4,8 +4,8 @@ package com.test.ds1.array;
 //sorted arrays with O(1) extra space.
 
 import java.util.Arrays;
-
-class MergeTwoSortedArray {
+//Important
+class MergeTwoSortedArrayInPlace {
 	static int arr1[] = new int[] { 1, 5, 9, 10, 15, 20 };
 	static int arr2[] = new int[] { 2, 3, 8, 13 };
 

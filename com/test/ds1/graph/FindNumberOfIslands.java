@@ -27,7 +27,7 @@ package com.test.ds1.graph;
  */
 
 
-public class FindNumberOIslands {
+public class FindNumberOfIslands {
 
     // No of rows and columns
     static final int ROW = 5, COL = 5;
@@ -41,7 +41,7 @@ public class FindNumberOIslands {
                                   { 1, 0, 0, 1, 1 },
                                   { 0, 0, 0, 0, 0 },
                                   { 1, 0, 1, 0, 1 } };
-        FindNumberOIslands I = new FindNumberOIslands();
+        FindNumberOfIslands I = new FindNumberOfIslands();
         System.out.println("Number of islands is: " + I.countIslands(M));
     }
 
@@ -87,7 +87,4 @@ public class FindNumberOIslands {
 
         return count;
     }
-
-
-
 }

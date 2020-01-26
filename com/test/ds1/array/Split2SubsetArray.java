@@ -63,12 +63,11 @@ public class Split2SubsetArray {
         (a) including the last element
         (b) excluding the last element
         */
-        return isSubsetSum (arr, n-1, sum) ||
-                isSubsetSum (arr, n-1, sum-arr[n-1]);
+
+        return isSubsetSum (arr, n-1, sum) || isSubsetSum (arr, n-1, sum-arr[n-1]);
     }
 
-    // Returns true if arr[] can be partitioned in two
-    // subsets of equal sum, otherwise false
+    // Returns true if arr[] can be partitioned in two subsets of equal sum, otherwise false
     static boolean findPartition (int arr[], int n)
     {
         // Calculate sum of the elements in array
@@ -76,13 +75,11 @@ public class Split2SubsetArray {
         for (int i = 0; i < n; i++)
             sum += arr[i];
 
-        // If sum is odd, there cannot be two subsets
-        // with equal sum
-        if (sum%2 != 0)
+        // If sum is odd, there cannot be two subsets with equal sum
+        if (sum % 2 != 0)
             return false;
 
-        // Find if there is subset with sum equal to half
-        // of total sum
+        // Find if there is subset with sum equal to half of total sum
         return isSubsetSum (arr, n, sum/2);
     }
 
@@ -90,8 +87,8 @@ public class Split2SubsetArray {
     public static void main (String[] args)
     {
 
-      //  int arr[] = {3, 1, 5, 9, 12};
-        int arr[] = {3,5, 6, 2};
+        int arr[] = {3, 1, 5, 9, 12};
+      //  int arr[] = {2,5, 6, 3};
         int n = arr.length;
         if (findPartition(arr, n) == true)
             System.out.println("Can be divided into two subsets of equal sum");

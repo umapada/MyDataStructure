@@ -48,6 +48,8 @@ public class MinimumSortedRotatedArray {
         while(low < high) {
             int mid = low + (high - low) / 2;
 
+
+            // Key point If arr[mid-1] > arr[mid], then mid is the minimum
             if(mid > low && arr[mid-1] > arr[mid]) {
                 return arr[mid];
             }

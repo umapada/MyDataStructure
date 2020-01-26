@@ -3,12 +3,10 @@ package com.test.ds1.array;
 
 public class Split2SubArray  {
 
-    // Returns split point. If
-    // not possible, then return -1.
+    // Returns split point. If not possible, then return -1.
     static int findSplitPoint(int arr[], int n)
     {
-        // traverse array element and compute sum
-        // of whole array
+        // traverse array element and compute sum of whole array
         int leftSum = 0;
         for (int i = 0 ; i < n ; i++)
             leftSum += arr[i];

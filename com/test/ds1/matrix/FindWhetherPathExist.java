@@ -1,4 +1,4 @@
-package com.test.ds1.graph;
+package com.test.ds1.matrix;
 
 /**
  * Find whether there is path between two cells in matrix
@@ -42,8 +42,7 @@ package com.test.ds1.graph;
  *    IF we seen destination M[i][j] == 2
  *      return true ;
  *
- *    Next move in path by traverse all 4 adjacent
- *    cell of current cell
+ *    Next move in path by traverse all 4 adjacent cell of current cell
  *    IF (FindPathUtil(M[][N], i+1, j) ||
  *        FindPathUtil(M[][N], i-1, j) ||
  *        FindPathUtil(M[][N], i, j+1) ||

@@ -71,8 +71,7 @@ public class MinimumNumberOfJumps {
 
     private static int minJumps(int[] arr, int n)
     {
-        int jumps[] = new int[n]; // jumps[n-1] will hold the
-        // result
+        int jumps[] = new int[n]; // jumps[n-1] will hold the result
         int i, j;
 
         if (n == 0 || arr[0] == 0)

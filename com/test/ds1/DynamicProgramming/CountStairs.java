@@ -35,8 +35,7 @@ Repeat this process and count total number of ways to reach at nth stair using s
 
  */
 
-// Program to find n-th stair
-// using step size 1 or 2 or 3.
+// Program to find n-th stair using step size 1 or 2 or 3.
 import java.lang.*;
 
 public class CountStairs{

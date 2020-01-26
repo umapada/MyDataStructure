@@ -1,5 +1,6 @@
 package com.test.ds1.array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -86,8 +87,8 @@ import java.util.Map;
 
 public class Anagram {
 
-
     public static void main(String[] args) {
+
         Map<Character, Integer> map = new HashMap<>();
 
         String str1 = "allergy";

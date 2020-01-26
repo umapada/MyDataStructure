@@ -17,9 +17,7 @@ Output: No
  */
 public class MakeAllNumbersArrayEqual {
 
-    // Function that returns true if all
-    // the array elements can be made equal
-    // with the given operation
+    // Function that returns true if all the array elements can be made equal with the given operation
     static boolean EqualNumbers(int a[], int n)
     {
         for (int i = 0; i < n; i++)
