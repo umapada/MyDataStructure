@@ -1,4 +1,4 @@
-package com.test.ds1;
+package com.test.ds1.DynamicProgramming;
 
 /*
 Given a set of coins and a total money amount. Write a method to compute the smallest number of
@@ -36,12 +36,12 @@ We initially set dp[i] to be MAX_VALUE.
 
 import java.util.Arrays;
 
-public class CoinChange {
+public class MinimumCoinChange {
 
     public static void main(String[] args) {
-        int[] coins = {2,5,10};
+        int[] coins = {1, 2, 3};
 
-        System.out.println(coinChange(coins, 6));
+        System.out.println(coinChange(coins, 4));
     }
 
     public static int coinChange(int[] coins, int amount) {

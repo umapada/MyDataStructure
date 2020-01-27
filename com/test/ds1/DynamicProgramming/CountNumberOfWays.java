@@ -1,4 +1,4 @@
-package com.test.ds1;
+package com.test.ds1.DynamicProgramming;
 
 /*
 Consider a game where a player can score 3 or 5 or 10 points in a move. Given a total score n,
@@ -31,10 +31,7 @@ For every possible move (3, 5 and 10), increment values in table.
  */
 
 
-// Java program to count number of
-// possible ways to a given score
-// can be reached in a game where
-// a move can earn 3 or 5 or 10
+// Java program to count number of possible ways to a given score can be reached in a game where a move can earn 3 or 5 or 10
 import java.util.Arrays;
 
 class CountNumberOfWays

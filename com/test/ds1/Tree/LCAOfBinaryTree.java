@@ -30,8 +30,7 @@ public class LCAOfBinaryTree {
         TreeNode right_lca = findLCA(root.right, n1, n2);
 
         // If both of the above calls return Non-NULL, then one key
-        // is present in one subtree and other is present in other,
-        // So this node is the LCA
+        // is present in one subtree and other is present in other, So this node is the LCA
         if (left_lca!=null && right_lca!=null)
             return root;
 

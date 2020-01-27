@@ -42,7 +42,7 @@ The following are steps to print Bottom View of Binary Tree.
 1. We put tree nodes in a queue for the level order traversal.
 2. Start with the horizontal distance(hd) 0 of the root node, keep on adding left child to queue along with the
    horizontal distance as hd-1 and right child as hd+1.
-3. Also, use a TreeMap which stores key value pair sorted on key.
+3. Also, use a TreeMap which stores key value pair sorted on key. // Not required
 4. Every time, we encounter a new horizontal distance or an existing horizontal distance put the node data for
    the horizontal distance as key. For the first time it will add to the map, next time it will replace the value.
    This will make sure that the bottom most element for that horizontal distance is present in the map and if you
@@ -82,8 +82,7 @@ class Tree
         // Queue to store tree nodes in level order traversal
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
 
-        // Assign initialized horizontal distance value to root
-        // node and add it to the queue.
+        // Assign initialized horizontal distance value to root node and add it to the queue.
         root.hd = hd;
         queue.add(root);
 
@@ -92,25 +91,20 @@ class Tree
         {
             TreeNode temp = queue.remove();
 
-            // Extract the horizontal distance value from the
-            // dequeued tree node.
+            // Extract the horizontal distance value from the dequeued tree node.
             hd = temp.hd;
 
-            // Put the dequeued tree node to TreeMap having key
-            // as horizontal distance. Every time we find a node
-            // having same horizontal distance we need to replace
-            // the data in the map.
+            // Put the dequeued tree node to TreeMap having key as horizontal distance. Every time we find a node
+            // having same horizontal distance we need to replace the data in the map.
             map.put(hd, temp.data);
 
-            // If the dequeued node has a left child add it to the
-            // queue with a horizontal distance hd-1.
+            // If the dequeued node has a left child add it to the queue with a horizontal distance hd-1.
             if (temp.left != null)
             {
                 temp.left.hd = hd-1;
                 queue.add(temp.left);
             }
-            // If the dequeued node has a left child add it to the
-            // queue with a horizontal distance hd+1.
+            // If the dequeued node has a left child add it to the queue with a horizontal distance hd+1.
             if (temp.right != null)
             {
                 temp.right.hd = hd+1;
@@ -118,19 +112,11 @@ class Tree
             }
         }
 
-        // Extract the entries of map into a set to traverse
-        // an iterator over that.
-        Set<Map.Entry<Integer, Integer>> set = map.entrySet();
+        map.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(x->{
+            System.out.print(x.getValue() + " ");
+        });
 
-        // Make an iterator
-        Iterator<Map.Entry<Integer, Integer>> iterator = set.iterator();
 
-        // Traverse the map elements using the iterator.
-        while (iterator.hasNext())
-        {
-            Map.Entry<Integer, Integer> me = iterator.next();
-            System.out.print(me.getValue()+" ");
-        }
     }
 }
 

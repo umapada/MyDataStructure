@@ -22,9 +22,13 @@ package com.test.ds1.DynamicProgramming;
 /**
  * Let m and n be the lengths of first and second strings respectively.
  *
- * A simple solution is to one by one consider all substrings of first string and for every substring check if it is a substring in second string. Keep track of the maximum length substring. There will be O(m^2) substrings and we can find whether a string is subsring on another string in O(n) time (See this). So overall time complexity of this method would be O(n * m2)
+ * A simple solution is to one by one consider all substrings of first string and for every substring check if it is a
+ * substring in second string. Keep track of the maximum length substring. There will be O(m^2) substrings and we can
+ * find whether a string is subsring on another string in O(n) time (See this). So overall time complexity of this
+ * method would be O(n * m2)
  *
- * Dynamic Programming can be used to find the longest common substring in O(m*n) time. The idea is to find length of the longest common suffix for all substrings of both strings and store these lengths in a table.
+ * Dynamic Programming can be used to find the longest common substring in O(m*n) time. The idea is to find length of
+ * the longest common suffix for all substrings of both strings and store these lengths in a table.
  *
  * The longest common suffix has following optimal substructure property.
  *
@@ -47,10 +51,8 @@ public class LongestCommonSubstring {
     */
     static int LCSubStr(char X[], char Y[], int m, int n)
     {
-        // Create a table to store lengths of longest common suffixes of
-        // substrings. Note that LCSuff[i][j] contains length of longest
-        // common suffix of X[0..i-1] and Y[0..j-1]. The first row and
-        // first column entries have no logical meaning, they are used only
+        // Create a table to store lengths of longest common suffixes of substrings. Note that LCSuff[i][j] contains length of longest
+        // common suffix of X[0..i-1] and Y[0..j-1]. The first row and first column entries have no logical meaning, they are used only
         // for simplicity of program
         int LCStuff[][] = new int[m + 1][n + 1];
         int result = 0;  // To store length of the longest common substring
@@ -83,8 +85,7 @@ public class LongestCommonSubstring {
         int m = X.length();
         int n = Y.length();
 
-        System.out.println("Length of Longest Common Substring is "
-                + LCSubStr(X.toCharArray(), Y.toCharArray(), m, n));
+        System.out.println("Length of Longest Common Substring is " + LCSubStr(X.toCharArray(), Y.toCharArray(), m, n));
     }
 
     /**

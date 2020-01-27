@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Algorithm to find a substring from a string, which have at most two distict char.
  */
-public class AtMostTwoDistinctCharacters {
+public class AtMostTwoDistinctCharacters_MaxSize {
     public static void main(String[] args) {
 
 

@@ -18,8 +18,7 @@ class NthLagestElementInBST {
         this.root = this.insertRec(this.root, data);
     }
      
-    /* A utility function to insert a new node
-    with given key in BST */
+    /* A utility function to insert a new node with given key in BST */
     TreeNode insertRec(TreeNode node, int data)
     {   
         /* If the tree is empty, return a new node */
@@ -46,17 +45,14 @@ class NthLagestElementInBST {
         int c = 0;
     }
  
-    // utility function to find kth largest no in 
-    // a given tree
+    // utility function to find kth largest no in a given tree
     void kthLargestUtil(TreeNode node, int k, count C)
     {
-        // Base cases, the second condition is important to
-        // avoid unnecessary recursive calls
+        // Base cases, the second condition is important to avoid unnecessary recursive calls
         if (node == null || C.c >= k)
             return;
          
-        // Follow reverse inorder traversal so that the
-        // largest element is visited first
+        // Follow reverse inorder traversal so that the largest element is visited first
         this.kthLargestUtil(node.right, k, C); 
          
         // Increment count of visited nodes

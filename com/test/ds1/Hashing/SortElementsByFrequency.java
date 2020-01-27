@@ -57,6 +57,9 @@ public class SortElementsByFrequency {
                     }
                 });
 
+
+      //  countMap.entrySet().stream().sorted(Map.Entry.<Integer, Integer>comparingByValue().reversed()).forEach(System.out::println);
+
         return result;
     }
 

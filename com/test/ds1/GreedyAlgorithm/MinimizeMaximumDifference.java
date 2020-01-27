@@ -10,10 +10,8 @@ package com.test.ds1.GreedyAlgorithm;
  *
  * Input  : arr[] = {1, 15, 10}, k = 6
  * Output :  Maximum difference is 5.
- * Explanation : We change 1 to 6, 15 to
- * 9 and 10 to 4. Maximum difference is 5
- * (between 4 and 9). We can't get a lower
- * difference.
+ * Explanation : We change 1 to 6, 15 to 9 and 10 to 4. Maximum difference is 5
+ * (between 4 and 9). We can't get a lower difference.
  *
  * Input : arr[] = {1, 5, 15, 10}
  *         k = 3

@@ -38,8 +38,7 @@ package com.test.ds1.Tree;
 
 // Java program to print left view of binary tree
 
-/* Class containing left and right child of current
-node and key value*/
+/* Class containing left and right child of current node and key value*/
 
 /* Class to print the left view */
 class LeftViewOfBinaryTree {

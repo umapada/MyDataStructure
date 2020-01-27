@@ -44,8 +44,7 @@ public class FindPairsSumX {
     }
 
     // Function to find all pairs in both arrays whose sum is equal to given value x
-    public static void findPairs(int arr1[], int arr2[],
-                                 int n, int m, int x)
+    public static void findPairs(int arr1[], int arr2[], int n, int m, int x)
     {
         // Insert all elements of first array in a hash
         Map<Integer, Integer> s = new HashMap<Integer, Integer>();

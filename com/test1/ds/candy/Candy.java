@@ -49,7 +49,6 @@ public class Candy {
             if (ratings[i] > ratings[i + 1]) {
                 cur = candies[i + 1] + 1;
             }
-
             result += Math.max(cur, candies[i]);
             candies[i] = cur;
         }

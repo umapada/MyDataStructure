@@ -17,15 +17,11 @@ public class MedianOfTwoSortedArray {
         int count;
         int m1 = -1, m2 = -1;
 
-        /* Since there are 2n elements, median will
-           be average of elements at index n-1 and
-           n in the array obtained after merging ar1
-           and ar2 */
+        /* Since there are 2n elements, median will  be average of elements at index n-1 and
+           n in the array obtained after merging ar1 and ar2 */
         for (count = 0; count <= n; count++)
         {
-            /* Below is to handle case where all
-              elements of ar1[] are smaller than
-              smallest(or first) element of ar2[] */
+    /* Below is to handle case where all  elements of ar1[] are smaller than smallest(or first) element of ar2[] */
             if (i == n)
             {
                 m1 = m2;
@@ -33,9 +29,7 @@ public class MedianOfTwoSortedArray {
                 break;
             }
 
-            /* Below is to handle case where all
-               elements of ar2[] are smaller than
-               smallest(or first) element of ar1[] */
+     /* Below is to handle case where all elements of ar2[] are smaller than smallest(or first) element of ar1[] */
             else if (j == n)
             {
                 m1 = m2;

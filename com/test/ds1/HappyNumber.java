@@ -63,8 +63,7 @@ then the given number is Happy Number otherwise not.
 
 public class HappyNumber {
 
-    // Utility method to return sum of square of
-// digit of n
+    // Utility method to return sum of square of digit of n
     static int numSquareSum(int n)
     {
         int squareSum = 0;
@@ -86,19 +85,16 @@ public class HappyNumber {
         slow = fast = n;
         do
         {
-            //  move slow number
-            // by one iteration
+            //  move slow number by one iteration
             slow = numSquareSum(slow);
 
-            //  move fast number
-            // by two iteration
+            //  move fast number by two iteration
             fast = numSquareSum(numSquareSum(fast));
 
         }
         while (slow != fast);
 
-        //  if both number meet at 1,
-        // then return true
+        //  if both number meet at 1, then return true
         return (slow == 1);
     }
 }

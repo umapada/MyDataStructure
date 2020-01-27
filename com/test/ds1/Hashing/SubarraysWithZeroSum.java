@@ -28,11 +28,13 @@ import java.util.Map;
  * Maintain sum of elements encountered so far in a variable (say sum).
  * If current sum is 0, we found a subarray starting from index 0 and ending at index current index
  * Check if current sum exists in the hash table or not.
- * If current sum already exists in the hash table then it indicates that this sum was the sum of some sub-array elements arr[0]…arr[i] and now the same sum is obtained for the current sub-array arr[0]…arr[j] which means that the sum of the sub-array arr[i+1]…arr[j] must be 0.
+ * If current sum already exists in the hash table then it indicates that this sum was the sum of some sub-array
+ * elements arr[0]…arr[i] and now the same sum is obtained for the current sub-array arr[0]…arr[j] which means that the
+ * sum of the sub-array arr[i+1]…arr[j] must be 0.
  * Insert current sum into the hash table
  */
 
-
+//Important
 public class SubarraysWithZeroSum {
 
     public static void main(String args[])
@@ -42,8 +44,7 @@ public class SubarraysWithZeroSum {
 
         List<Pair> out = findSubArrays(arr, n);
 
-        // if we did not find any subarray with 0 sum,
-        // then subarray does not exists
+        // if we did not find any subarray with 0 sum, then subarray does not exists
         if (out.size() == 0)
             System.out.println("No subarray exists");
         else
@@ -58,8 +59,7 @@ public class SubarraysWithZeroSum {
         // create an empty map
         Map<Integer,List<Integer>> map = new HashMap<>();
 
-        // create an empty vector of pairs to store
-        // subarray starting and ending index
+        // create an empty vector of pairs to store subarray starting and ending index
         List<Pair> out = new ArrayList<>();
 
         // Maintains sum of elements so far
@@ -70,15 +70,12 @@ public class SubarraysWithZeroSum {
             // add current element to sum
             sum += arr[i];
 
-            // if sum is 0, we found a subarray starting
-            // from index 0 and ending at index i
+            // if sum is 0, we found a subarray starting from index 0 and ending at index i
             if (sum == 0)
                 out.add(new Pair(0, i));
             List<Integer> al = new ArrayList<>();
 
-            // If sum already exists in the map there exists
-            // at-least one subarray ending at index i with
-            // 0 sum
+            // If sum already exists in the map there exists at-least one subarray ending at index i with 0 sum
             if (map.containsKey(sum))
             {
                 // map[sum] stores starting index of all subarrays

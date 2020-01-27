@@ -34,15 +34,13 @@ class BoundaryTraversalOfBinaryTree {
         }
     }
 
-    // A function to print all left boundary nodes, except a leaf node.
-    // Print the nodes in TOP DOWN manner
+    // A function to print all left boundary nodes, except a leaf node. Print the nodes in TOP DOWN manner
     void printBoundaryLeft(TreeNode node)
     {
         if (node != null) {
             if (node.left != null) {
 
-                // to ensure top down order, print the node
-                // before calling itself for left subtree
+                // to ensure top down order, print the node before calling itself for left subtree
                 System.out.print(node.data + " ");
                 printBoundaryLeft(node.left);
             }
@@ -51,19 +49,16 @@ class BoundaryTraversalOfBinaryTree {
                 printBoundaryLeft(node.right);
             }
 
-            // do nothing if it is a leaf node, this way we avoid
-            // duplicates in output
+            // do nothing if it is a leaf node, this way we avoid duplicates in output
         }
     }
 
-    // A function to print all right boundary nodes, except a leaf node
-    // Print the nodes in BOTTOM UP manner
+    // A function to print all right boundary nodes, except a leaf node Print the nodes in BOTTOM UP manner
     void printBoundaryRight(TreeNode node)
     {
         if (node != null) {
             if (node.right != null) {
-                // to ensure bottom up order, first call for right
-                // subtree, then print this node
+                // to ensure bottom up order, first call for right subtree, then print this node
                 printBoundaryRight(node.right);
                 System.out.print(node.data + " ");
             }
@@ -71,8 +66,7 @@ class BoundaryTraversalOfBinaryTree {
                 printBoundaryRight(node.left);
                 System.out.print(node.data + " ");
             }
-            // do nothing if it is a leaf node, this way we avoid
-            // duplicates in output
+            // do nothing if it is a leaf node, this way we avoid duplicates in output
         }
     }
 

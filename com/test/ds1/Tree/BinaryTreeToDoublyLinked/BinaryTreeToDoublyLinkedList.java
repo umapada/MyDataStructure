@@ -24,12 +24,10 @@ class BinaryTreeToDoublyLinkedList
     TreeNode head;
 
     // Initialize previously visited node as NULL. This is
-    // static so that the same value is accessible in all recursive
-    // calls
+    // static so that the same value is accessible in all recursive calls
     static TreeNode prev = null;
 
-    // A simple recursive function to convert a given Binary tree
-    // to Doubly Linked List
+    // A simple recursive function to convert a given Binary tree to Doubly Linked List
     // root --> Root of Binary Tree
     void BinaryTree2DoubleLinkedList(TreeNode root)
     {

@@ -187,8 +187,7 @@ public class PairElementsSwapping {
      *
      * // assume array1 is small i.e. (m < n)
      * // where m is array1.length and n is array2.length
-     * 1. Find sum1(sum of small array elements) ans sum2
-     *   (sum of larger array elements). // time O(m+n)
+     * 1. Find sum1(sum of small array elements) ans sum2 (sum of larger array elements). // time O(m+n)
      * 2. Make a hashset for small array(here array1).
      * 3. Calculate diff as (sum1-sum2)/2.
      * 4. Run a loop for array2
@@ -200,7 +199,7 @@ public class PairElementsSwapping {
      * pair.
      */
 
-
+//Important
     static void findSwapValues4(int A[], int n, int B[], int m){
         int sum1 = 0, sum2 = 0;
         Set<Integer> set1 = new HashSet<>();

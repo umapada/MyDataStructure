@@ -1,7 +1,6 @@
 package com.test.ds1.linkedlist;
 
-//Java program to illustrate merge sorted
-//of linkedList
+//Java program to illustrate merge sorted of linkedList
 
 public class LinkedListMergeSort {
 	node head = null;

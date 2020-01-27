@@ -121,15 +121,13 @@ public class RottenOranges
     }
 
 
-    // Function to check whether the cell is delimiter
-    // which is (-1, -1)
+    // Function to check whether the cell is delimiter which is (-1, -1)
     static boolean isDelim(Ele temp)
     {
         return (temp.x == -1 && temp.y == -1);
     }
 
-    // Function to check whether there is still a fresh
-    // orange remaining
+    // Function to check whether there is still a fresh orange remaining
     static boolean checkAll(int arr[][])
     {
         for (int i=0; i<R; i++)
@@ -139,9 +137,8 @@ public class RottenOranges
         return false;
     }
 
-    // This function finds if it is possible to rot all oranges or not.
-    // If possible, then it returns minimum time required to rot all,
-    // otherwise returns -1
+    // This function finds if it is possible to rot all oranges or not. If possible, then it returns minimum time
+    // required to rot all, otherwise returns -1
     static int rotOranges(int arr[][])
     {
         // Create a queue of cells
@@ -161,9 +158,8 @@ public class RottenOranges
         // Process the grid while there are rotten oranges in the Queue
         while(!Q.isEmpty())
         {
-            // This flag is used to determine whether even a single fresh
-            // orange gets rotten due to rotten oranges in the current time
-            // frame so we can increase the count of the required time.
+            // This flag is used to determine whether even a single fresh orange gets rotten due to rotten oranges
+            // in the current time frame so we can increase the count of the required time.
             boolean flag = false;
 
             // Process all the rotten oranges in current time frame.
@@ -176,8 +172,7 @@ public class RottenOranges
                 {
                     if(!flag)
                     {
-                        // if this is the first orange to get rotten, increase
-                        // count and set the flag.
+                        // if this is the first orange to get rotten, increase count and set the flag.
                         ans++;
                         flag = true;
                     }
