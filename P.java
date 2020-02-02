@@ -1,11 +1,4 @@
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Scanner;
 import java.util.concurrent.*;
-
-import static java.lang.Math.log;
-import static java.lang.Math.log10;
 
 public class P {
 
