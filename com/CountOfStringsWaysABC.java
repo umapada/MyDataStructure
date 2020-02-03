@@ -1,6 +1,7 @@
 package com; /**
  * Count of strings that can be formed using a, b and c under given constraints
- * Given a length n, count the number of strings of length n that can be made using ‘a’, ‘b’ and ‘c’ with at-most one ‘b’ and two ‘c’s allowed.
+ * Given a length n, count the number of strings of length n that can be made using ‘a’, ‘b’ and ‘c’ with at-most one
+ * ‘b’ and two ‘c’s allowed.
  *
  * Examples :
  *
@@ -16,23 +17,41 @@ package com; /**
 
 
 /**
- * If we drown a recursion tree of above code, we can notice that same values appear multiple times. So we store results which are used later if repeated.
+ * If we drown a recursion tree of above code, we can notice that same values appear multiple times. So we store
+ * results which are used later if repeated.
  */
-public class CountOfStrings {
-}
+
+
+// A O(1) Java program to
+// find number of strings
+// that can be made under
+// given constraints.
+
+
+class CountOfStringsWaysABC
+{
+    static int countStr(int n)
+    {
+        return 1 + (n * 2) +
+                (n * ((n * n) - 1) / 2);
+    }
+
+    // Driver code
+    public static void main (String[] args)
+    {
+        int n = 3;
+        System.out.println( countStr(n));
+    }
 
 
 // Java program to count number of strings
 // of n characters with
 
-class GFG
-{
     // n is total number of characters.
     // bCount and cCount are counts of 'b'
     // and 'c' respectively.
 
-    static int countStrUtil(int[][][] dp, int n,
-                            int bCount, int cCount)
+    static int countStrUtil(int[][][] dp, int n, int bCount, int cCount)
     {
 
         // Base cases
@@ -81,13 +100,6 @@ class GFG
         return countStrUtil(dp, n,bCount,cCount);
     }
 
-    // Driver code
-    public static void main(String[] args)
-    {
-        int n = 3; // Total number of characters
-        int bCount = 1, cCount = 2;
-        System.out.println(countStr(n,bCount,cCount));
-    }
 }
 
 
@@ -97,27 +109,6 @@ class GFG
  */
 
 
-// A O(1) Java program to
-// find number of strings
-// that can be made under
-// given constraints.
-
-
-class GFG2
-{
-    static int countStr(int n)
-    {
-        return 1 + (n * 2) +
-                (n * ((n * n) - 1) / 2);
-    }
-
-    // Driver code
-    public static void main (String[] args)
-    {
-        int n = 3;
-        System.out.println( countStr(n));
-    }
-}
 
 // This code is contributed by ajit
 
