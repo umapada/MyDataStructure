@@ -26,8 +26,16 @@ import java.util.Map.Entry;
 
 
 
-class DiagonalSum
+
+
+
+
+
+// Tree class
+//Progress => //2/
+class DiagonalSumBinaryTree
 {
+
     public static void main(String[] args)
     {
         TreeNode root = new TreeNode(1);
@@ -44,29 +52,7 @@ class DiagonalSum
         DiagonalSumBinaryTree tree = new DiagonalSumBinaryTree(root);
         tree.diagonalSum();
     }
-}
 
-
-
-//Tree node
-class TreeNode
-{
-    int data; //node data
-    int vd; //vertical distance diagonally
-    TreeNode left, right; //left and right child's reference
-
-    // Tree node constructor
-    public TreeNode(int data)
-    {
-        this.data = data;
-        vd = Integer.MAX_VALUE;
-        left = right = null;
-    }
-}
-
-// Tree class
-class DiagonalSumBinaryTree
-{
     TreeNode root;//Tree root
 
     // Tree constructor
@@ -130,5 +116,22 @@ class DiagonalSumBinaryTree
 
             System.out.print(me.getValue()+" ");
         }
+    }
+}
+
+//Tree node
+
+class TreeNode
+{
+    int data; //node data
+    int vd; //vertical distance diagonally
+    TreeNode left, right; //left and right child's reference
+
+    // Tree node constructor
+    public TreeNode(int data)
+    {
+        this.data = data;
+        vd = Integer.MAX_VALUE;
+        left = right = null;
     }
 }

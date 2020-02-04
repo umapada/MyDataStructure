@@ -9,15 +9,17 @@ import java.util.*;
 
 /**
  * Solution1 => Convert array to integer, add one, convert back to array
+ * This will not work, if array is too big and integer overflow will occur
  */
+//Progress => //2/
 public class AddOneToArray {
 
     public static void main(String[] args) {
         int i[] = {9, 9};
-//        int[] p = plusOne(i);
-//
-//        Arrays.stream(p).forEach(System.out::println);
-        double res = 0;
+        int[] p = plusOne(i);
+
+        Arrays.stream(p).forEach(System.out::println);
+ /*       double res = 0;
         int count = 0;
         for (int k = i.length -1 ; k >= 0; k --){
 
@@ -38,12 +40,13 @@ public class AddOneToArray {
         }
 
         Arrays.stream(finalRes).forEach(System.out::println);
+        */
 
     }
 
     //
     public static int[] plusOne(int[] digits) {
-        int[] ret = new int[1];
+       // int[] ret = null;
 
         List<Integer> list = new ArrayList<>();
         int carry = 0;
@@ -78,7 +81,7 @@ public class AddOneToArray {
             list.add(1);
         }
         Collections.reverse(list);
-        ret = list.stream().mapToInt(i -> i).toArray();
+      int[]  ret = list.stream().mapToInt(i -> i).toArray();
 
         return ret;
     }
