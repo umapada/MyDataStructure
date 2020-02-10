@@ -14,42 +14,25 @@ package com; /**
  * Input  : n = 4
  * Output : 39
  */
-
-
 /**
  * If we drown a recursion tree of above code, we can notice that same values appear multiple times. So we store
  * results which are used later if repeated.
  */
-
-
-// A O(1) Java program to
-// find number of strings
-// that can be made under
-// given constraints.
-
-
+// A O(1) Java program to find number of strings that can be made under given constraints.
 class CountOfStringsWaysABC
 {
     static int countStr(int n)
     {
-        return 1 + (n * 2) +
-                (n * ((n * n) - 1) / 2);
+        return 1 + (n * 2) + (n * ((n * n) - 1) / 2);
     }
-
     // Driver code
     public static void main (String[] args)
     {
         int n = 3;
         System.out.println( countStr(n));
     }
-
-
-// Java program to count number of strings
-// of n characters with
-
-    // n is total number of characters.
-    // bCount and cCount are counts of 'b'
-    // and 'c' respectively.
+// Java program to count number of strings of n characters with n is total number of characters.
+    // b Count and cCount are counts of 'b' and 'c' respectively.
 
     static int countStrUtil(int[][][] dp, int n, int bCount, int cCount)
     {
@@ -74,8 +57,7 @@ class CountOfStringsWaysABC
             return dp[n][bCount][cCount];
         }
 
-        // Three cases, we choose, a or b or c
-        // In all three cases n decreases by 1.
+        // Three cases, we choose, a or b or c In all three cases n decreases by 1.
         int res = countStrUtil(dp, n - 1, bCount, cCount);
         res += countStrUtil(dp, n - 1, bCount - 1, cCount);
         res += countStrUtil(dp, n - 1, bCount, cCount - 1);

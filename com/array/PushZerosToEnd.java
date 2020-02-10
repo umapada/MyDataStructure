@@ -21,7 +21,7 @@ Output : arr[] = {1, 2, 3, 6, 0, 0, 0};
 //PushZerosToEnd
 
 /* Java program to push zeroes to back of array */
-
+//Progress => //6
 class PushZerosToEnd
 {
     // Function which pushes all zeros to end of an array.

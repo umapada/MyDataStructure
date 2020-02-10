@@ -130,53 +130,40 @@ public class MedianOfTwoSortedArrays {
 
 
     /* This function returns median of ar1[] and ar2[].
-Assumptions in this function:
-    Both ar1[] and ar2[] are sorted arrays
-    Both have n elements */
-    static int getMedian2(int ar1[], int ar2[], int n)
-    {
-    /* return -1 for invalid input */
-        if (n <= 0)
-            return -1;
-        if (n == 1)
-            return (ar1[0] + ar2[0]) / 2;
-        if (n == 2)
-            return (Math.max(ar1[0], ar2[0]) + Math.min(ar1[1], ar2[1])) / 2;
+    Assumptions in this function:
+    Both ar1[] and ar2[] are sorted arrays Both have n elements */
+    public double findMedianSortedArrays(int[] a, int[] b, int start_a, int end_a, int start_b, int end_b) {
+        if ((end_a - start_a == 0) && ((end_b - start_b == 0)))
+	        {
+	            return (a[0] + b[0])/2;
+	        }
 
-    /* get the median of the first array */
-        int m1 = median(ar1, n);
+	        if ((end_a - start_a == 1) && ((end_b - start_b == 1)))
+	        {
+	            return (Math.max(a[start_a], b[start_b]) + Math.min(a[end_a], b[end_b]))/2;
+	        }
+	        int m1_index = (start_a + end_a)/2;
+	        int m2_index = (start_b + end_b)/2;
 
-    /* get the median of the second array */
-        int m2 = median(ar2, n);
-
-    /* If medians are equal then return either m1 or m2 */
-        if (m1 == m2)
-            return m1;
-
-    /* if m1 < m2 then median must exist in ar1[m1....] and ar2[....m2] */
-        if (m1 < m2)
-        {
-            //TODO fix below error
-            if (n % 2 == 0) {
-             //     return getMedian(ar1 + n / 2 - 1, ar2, n - n / 2 + 1);
+        // If medians are equal then return either m1 or m2
+        if (m2_index == m1_index)
+	        {
+	            return a[m2_index];
+	        }
+        // if m1 < m2 then median must exist in ar1[m1....] and ar2[....m2]
+	        if (m1_index < m2_index) {
+                start_a = m1_index;
+                end_b = m2_index;
             }
-            //TODO fix below error
-            //return getMedian(ar1 + n / 2, ar2, n - n / 2);
-        }
+	     // if m1 > m2 then median must exist in ar1[....m1] and ar2[m2...]
+            else{
+	            start_b = m2_index;
+	            end_a = m1_index;
+            }
+	        return findMedianSortedArrays(a, b, start_a, end_a, start_b, end_b);
+	    }
 
-    /* if m1 > m2 then median must exist in ar1[....m1] and ar2[m2...] */
-        if (n % 2 == 0) {
-            //TODO fix below error
-           // return getMedian(ar2 + n / 2 - 1, ar1, n - n / 2 + 1);
-        }
-        //TODO fix below error
-        //return getMedian(ar2 + n / 2, ar1, n - n / 2);
-        //TODO remove below
-        return 0;
-    }
-
-    /* Function to get median
-    of a sorted array */
+    /* Function to get median  of a sorted array */
     static int median(int arr[], int n)
     {
         if (n % 2 == 0)

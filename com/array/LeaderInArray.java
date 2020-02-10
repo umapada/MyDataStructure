@@ -10,7 +10,7 @@ import java.util.List;
  * than all the elements to its right side. And the rightmost element is always a leader.
  * For example int the array {16, 17, 4, 3, 5, 2}, leaders are 17, 5 and 2.
  */
-
+//Progress => //4
 public class LeaderInArray {
 
     public static void main(String[] args) {

@@ -37,13 +37,15 @@ package com.DynamicProgramming;
  *
  * m: Length of str1 (first string)
  * n: Length of str2 (second string)
- * If last characters of two strings are same, nothing much to do. Ignore last characters and get count for remaining strings. So we recur for lengths m-1 and n-1.
- * Else (If last characters are not same), we consider all operations on ‘str1’, consider all three operations on last character of first string, recursively compute minimum cost for all three operations and take minimum of three values.
+ * If last characters of two strings are same, nothing much to do. Ignore last characters and get count for
+ * remaining strings. So we recur for lengths m-1 and n-1. Else (If last characters are not same), we consider
+ * all operations on ‘str1’, consider all three operations on last character of first string, recursively compute
+ * minimum cost for all three operations and take minimum of three values.
  * Insert: Recur for m and n-1
  * Remove: Recur for m-1 and n
  * Replace: Recur for m-1 and n-1
  */
-
+//Progress => //4
 public class EditDistance {
     static int min(int x, int y, int z)
     {
@@ -57,26 +59,21 @@ public class EditDistance {
 
     static int editDist(String str1, String str2, int m, int n)
     {
-        // If first string is empty, the only option is to
-        // insert all characters of second string into first
+        // If first string is empty, the only option is to insert all characters of second string into first
         if (m == 0)
             return n;
 
-        // If second string is empty, the only option is to
-        // remove all characters of first string
+        // If second string is empty, the only option is to remove all characters of first string
         if (n == 0)
             return m;
 
-        // If last characters of two strings are same, nothing
-        // much to do. Ignore last characters and get count for
+        // If last characters of two strings are same, nothing much to do. Ignore last characters and get count for
         // remaining strings.
         if (str1.charAt(m - 1) == str2.charAt(n - 1))
             return editDist(str1, str2, m - 1, n - 1);
 
-        // If last characters are not same, consider all three
-        // operations on last character of first string, recursively
-        // compute minimum cost for all three operations and take
-        // minimum of three values.
+        // If last characters are not same, consider all three operations on last character of first string, recursively
+        // compute minimum cost for all three operations and take minimum of three values.
         return 1 + min(editDist(str1, str2, m, n - 1), // Insert
                 editDist(str1, str2, m - 1, n), // Remove
                 editDist(str1, str2, m - 1, n - 1) // Replace
@@ -93,7 +90,7 @@ public class EditDistance {
 
 
     /**
-     * The time complexity of above solution is exponential. In worst case, we may end up doing O(3m) operations.
+     * The time complexity of above solution is exponential. In worst case, we may end up doing O(3(power)m) operations.
      * The worst case happens when none of characters of two strings match. Below is a recursive call diagram for worst case.
      */
 

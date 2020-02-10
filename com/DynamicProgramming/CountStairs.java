@@ -16,7 +16,7 @@ Input : 4
 Output : 7
 
 Input : 3
-Output : 4
+Output : 4  (111, 12, 3, 21)
 
  */
 
@@ -37,11 +37,16 @@ Repeat this process and count total number of ways to reach at nth stair using s
 
 // Program to find n-th stair using step size 1 or 2 or 3.
 import java.lang.*;
-
+//Progress => //4
 public class CountStairs{
 
-    // Returns count of ways to reach
-    // n-th stair using 1 or 2 or 3 steps.
+
+    // Driver function
+    public static void main(String argc[]){
+        int n = 3;
+        System.out.println(findStep(n));
+    }
+    // Returns count of ways to reach n-th stair using 1 or 2 or 3 steps.
     public static int findStep(int n)
     {
         if (n == 1 || n == 0)
@@ -50,13 +55,7 @@ public class CountStairs{
             return 2;
 
         else
-            return findStep(n - 3) +
-                    findStep(n - 2) +
-                    findStep(n - 1);
+            return findStep(n - 3) + findStep(n - 2) + findStep(n - 1);
     }
-    // Driver function
-    public static void main(String argc[]){
-        int n = 4;
-        System.out.println(findStep(n));
-    }
+
 }

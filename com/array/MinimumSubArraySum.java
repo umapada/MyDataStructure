@@ -26,9 +26,8 @@ Whole array sum is smaller than 8.
  */
 
 // O(n)
-
+//Progress => //5
 public class MinimumSubArraySum {
-
 
     public static void main(String[] args) {
         int [] num = {1, 4, 45, 6, 0, 19};
@@ -36,7 +35,6 @@ public class MinimumSubArraySum {
 
         System.out.println(out);
     }
-
 
     // Returns length of smallest subarray with sum greater than x.
     // If there is no subarray with given sum, then returns n+1

@@ -27,6 +27,7 @@ import java.util.Set;
  * Scan each character of input string and insert values to each keys in the hash.
  * When any character appears more than once, hash key value is increment by 1, and return the character.
  */
+//Progress => //4
 public class FirstRepeatedCharacter {
 
     public static void main (String[] args)

@@ -23,10 +23,13 @@ package com.DynamicProgramming;
 /**
  * When we drop an egg from a floor x, there can be two cases (1) The egg breaks (2) The egg doesn’t break.
  *
- * 1) If the egg breaks after dropping from xth floor, then we only need to check for floors lower than x with remaining eggs; so the problem reduces to x-1 floors and n-1 eggs
- * 2) If the egg doesn’t break after dropping from the xth floor, then we only need to check for floors higher than x; so the problem reduces to k-x floors and n eggs.
+ * 1) If the egg breaks after dropping from xth floor, then we only need to check for floors lower than x with remaining
+ * eggs; so the problem reduces to x-1 floors and n-1 eggs
+ * 2) If the egg doesn’t break after dropping from the xth floor, then we only need to check for floors higher than x;
+ * so the problem reduces to k-x floors and n eggs.
  *
- * Since we need to minimize the number of trials in worst case, we take the maximum of two cases. We consider the max of above two cases for every floor and choose the floor which yields minimum number of trials.
+ * Since we need to minimize the number of trials in worst case, we take the maximum of two cases. We consider the max
+ * of above two cases for every floor and choose the floor which yields minimum number of trials.
  *
  *   k ==> Number of floors
  *   n ==> Number of Eggs
@@ -37,6 +40,13 @@ package com.DynamicProgramming;
  */
 
 public class EggDroppingPuzzle {
+
+    // Driver code
+    public static void main(String args[])
+    {
+        int n = 2, k = 30;
+        System.out.print("Minimum number of trials in worst case with  eggs and " + k + " floors is " + eggDrop(n, k));
+    }
 
     /* Function to get minimum number of trials needed in worst case with n eggs and k floors */
     static int eggDrop(int n, int k)
@@ -49,30 +59,21 @@ public class EggDroppingPuzzle {
         if (n == 1)
             return k;
 
-        int min = Integer.MAX_VALUE;
-        int x, res;
+        int min = Integer.MAX_VALUE, x;
 
         // Consider all droppings from 1st floor to kth floor and return the minimum of these values plus 1.
         for (x = 1; x <= k; x++)
         {
-            res = Math.max(eggDrop(n-1, x-1), eggDrop(n, k-x));
-            if (res < min)
-                min = res;
+            min = Math.min(min, Math.max(eggDrop(n-1, x-1), eggDrop(n, k-x)));
         }
         return min + 1;
     }
 
-    // Driver code
-    public static void main(String args[])
-    {
-        int n = 2, k = 34;
-        System.out.print("Minimum number of trials in worst case with "
-                + n + " eggs and " + k + " floors is " + eggDrop(n, k));
-    }
-
 
     /**
-     * It should be noted that the above function computes the same subproblems again and again. See the following partial recursion tree, E(2, 2) is being evaluated twice. There will many repeated subproblems when you draw the complete recursion tree even for small values of n and k.
+     * It should be noted that the above function computes the same subproblems again and again. See the following
+     * partial recursion tree, E(2, 2) is being evaluated twice. There will many repeated subproblems when you draw the
+     * complete recursion tree even for small values of n and k.
      *
      *
      *                          E(2,4)
@@ -92,7 +93,10 @@ public class EggDroppingPuzzle {
      *             ......
      *
      * Partial recursion tree for 2 eggs and 4 floors.
-     * Since same suproblems are called again, this problem has Overlapping Subprolems property. So Egg Dropping Puzzle has both properties (see this and this) of a dynamic programming problem. Like other typical Dynamic Programming(DP) problems, recomputations of same subproblems can be avoided by constructing a temporary array eggFloor[][] in bottom up manner.
+     * Since same suproblems are called again, this problem has Overlapping Subprolems property. So Egg Dropping Puzzle
+     * has both properties (see this and this) of a dynamic programming problem. Like other typical Dynamic
+     * Programming(DP) problems, recomputations of same subproblems can be avoided by constructing a temporary array
+     * eggFloor[][] in bottom up manner.
      *
      * Dynamic Programming Solution
      * Following are the implementations for Egg Dropping problem using Dynamic Programming.
@@ -102,17 +106,15 @@ public class EggDroppingPuzzle {
     // A utility function to get maximum of two integers
     static int max(int a, int b) { return (a > b)? a: b; }
 
-    /* Function to get minimum number of trials needed in worst
-    case with n eggs and k floors */
+    /* Function to get minimum number of trials needed in worst case with n eggs and k floors */
     static int eggDrop2(int n, int k)
     {
-       /* A 2D table where entery eggFloor[i][j] will represent minimum
-       number of trials needed for i eggs and j floors. */
+       /* A 2D table where entry eggFloor[i][j] will represent minimum number of trials needed for i eggs and j floors. */
         int eggFloor[][] = new int[n+1][k+1];
         int res;
         int i, j, x;
 
-        // We need one trial for one floor and0 trials for 0 floors
+        // We need one trial for one floor and 0 trials for 0 floors
         for (i = 1; i <= n; i++)
         {
             eggFloor[i][1] = 1;
@@ -123,8 +125,7 @@ public class EggDroppingPuzzle {
         for (j = 1; j <= k; j++)
             eggFloor[1][j] = j;
 
-        // Fill rest of the entries in table using optimal substructure
-        // property
+        // Fill rest of the entries in table using optimal substructure property
         for (i = 2; i <= n; i++)
         {
             for (j = 2; j <= k; j++)

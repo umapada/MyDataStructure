@@ -1,12 +1,12 @@
 package com.array;
-
+//Progress => //5
 public class MinimumSortedRotatedArray {
 
     public static void main (String[] args)
     {
-        int arr1[] =  {5, 6, 1, 2, 3, 4};
-        int n1 = arr1.length;
-        System.out.println("The minimum element is "+ findMin(arr1, 0, n1-1));
+//        int arr1[] =  {5, 6, 1, 2, 3, 4};
+//        int n1 = arr1.length;
+//        System.out.println("The minimum element is "+ findMin(arr1, 0, n1-1));
 
         int arr2[] =  {1, 2, 3, 4};
         int n2 = arr2.length;
@@ -57,7 +57,7 @@ public class MinimumSortedRotatedArray {
                 low = mid + 1;
             }
             else {
-                high = mid;
+                high = mid-1;
             }
         }
         return arr[low];

@@ -15,7 +15,7 @@ package com.Bit_Operation;
  * The binary representation of 222 is 11011110.
  */
 
-
+//Progress => //6
 public class LongestConsecutive1 {
 
     /**

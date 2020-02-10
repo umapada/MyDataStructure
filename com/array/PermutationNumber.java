@@ -1,5 +1,5 @@
 package com.array;
-
+//Progress => //6
 public class PermutationNumber {
 
 	public static void main(String args[]) {

@@ -17,7 +17,7 @@ package com.array;
  *
  * There may be more than one subarrays with sum as the given sum.
  */
-//TODO
+//Progress => //6
 public class SubarrayWithGivenSum {
 
     public static void main(String[] args) {
@@ -47,8 +47,7 @@ public class SubarrayWithGivenSum {
             if (curr_sum == sum)
             {
                 int p = i-1;
-                System.out.println("Sum found between indexes " + start
-                        + " and " + p);
+                System.out.println("Sum found between indexes " + start + " and " + p);
                // return 1;
                 return;
             }

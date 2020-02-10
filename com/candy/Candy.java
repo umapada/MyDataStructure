@@ -7,12 +7,13 @@ You are giving candies to these children subjected to the following requirements
 
 1. Each child must have at least one candy.
 2. Children with a higher rating get more candies than their neighbors.
+
 What is the minimum candies you must give?
 
 Analysis
 This problem can be solved in O(n) time.
 
-We can always assign a neighbor with 1 more if the neighbor has higher a rating value.
+We can always assign a neighbor with 1 more if the neighbor has higher rating value.
 However, to get the minimum total number, we should always start adding 1s in the ascending order.
 We can solve this problem by scanning the array from both sides. First, scan the array from left to right,
 and assign values for all the ascending pairs. Then scan from right to left and assign values to descending pairs.
@@ -22,7 +23,7 @@ This problem is similar to Trapping Rain Water.
 
 
  */
-
+//TODO
 public class Candy {
 
     public int candy(int[] ratings) {

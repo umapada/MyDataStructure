@@ -47,7 +47,23 @@ import java.util.List;
  */
 
 //Important
+//Progress => //4
 public class ChainWordsToFormCircle {
+
+
+    public static void main(String args[]){
+        String notChaininput[] = {"geeks","king", "seeks", "sing","gik","kin"};
+        String chainInput[] = {"king","gik","geeks", "seeks", "sing"};
+        ChainWordsToFormCircle cwt = new ChainWordsToFormCircle();
+        List<String> result = cwt.formCircle(chainInput);
+        if(result.size() == 0){
+            System.out.println("Not able to form a chain");
+        }else{
+            for(String chainNode : result){
+                System.out.print(chainNode + " ");
+            }
+        }
+    }
 
     public List<String> formCircle(String input[]){
         List<String> result = new ArrayList<String>();
@@ -93,18 +109,6 @@ public class ChainWordsToFormCircle {
         return false;
     }
 
-    public static void main(String args[]){
-        String notChaininput[] = {"geeks","king", "seeks", "sing","gik","kin"};
-        String chainInput[] = {"king","gik","geeks", "seeks", "sing"};
-        ChainWordsToFormCircle cwt = new ChainWordsToFormCircle();
-        List<String> result = cwt.formCircle(chainInput);
-        if(result.size() == 0){
-            System.out.println("Not able to form a chain");
-        }else{
-            for(String chainNode : result){
-                System.out.print(chainNode + " ");
-            }
-        }
-    }
+
 
 }

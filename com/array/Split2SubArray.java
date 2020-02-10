@@ -1,6 +1,6 @@
 package com.array;
 
-
+//Progress => //6
 public class Split2SubArray  {
 
     // Returns split point. If not possible, then return -1.

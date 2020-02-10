@@ -15,6 +15,7 @@ Input: arr[] = {10, 14}
 Output: No
 
  */
+//Progress => //5
 public class MakeAllNumbersArrayEqual {
 
     // Function that returns true if all the array elements can be made equal with the given operation

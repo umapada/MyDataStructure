@@ -17,9 +17,25 @@ e.g. The left most node is also the leaf node of the tree.
 
 
 
-
+//Progress => //4
 class BoundaryTraversalOfBinaryTree {
     TreeNode root;
+
+
+    // Driver program to test above functions
+    public static void main(String args[])
+    {
+        BoundaryTraversalOfBinaryTree tree = new BoundaryTraversalOfBinaryTree();
+        tree.root = new TreeNode(20);
+        tree.root.left = new TreeNode(8);
+        tree.root.left.left = new TreeNode(4);
+        tree.root.left.right = new TreeNode(12);
+        tree.root.left.right.left = new TreeNode(10);
+        tree.root.left.right.right = new TreeNode(14);
+        tree.root.right = new TreeNode(22);
+        tree.root.right.right = new TreeNode(25);
+        tree.printBoundary(tree.root);
+    }
 
     // A simple function to print leaf nodes of a binary tree
     void printLeaves(TreeNode node)
@@ -88,18 +104,5 @@ class BoundaryTraversalOfBinaryTree {
         }
     }
 
-    // Driver program to test above functions
-    public static void main(String args[])
-    {
-        BoundaryTraversalOfBinaryTree tree = new BoundaryTraversalOfBinaryTree();
-        tree.root = new TreeNode(20);
-        tree.root.left = new TreeNode(8);
-        tree.root.left.left = new TreeNode(4);
-        tree.root.left.right = new TreeNode(12);
-        tree.root.left.right.left = new TreeNode(10);
-        tree.root.left.right.right = new TreeNode(14);
-        tree.root.right = new TreeNode(22);
-        tree.root.right.right = new TreeNode(25);
-        tree.printBoundary(tree.root);
-    }
+
 }

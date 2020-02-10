@@ -16,11 +16,10 @@ indices are found then print them.
 
 // Java program to determine if array arr[]
 // can be split into three equal sum sets.
-
+//Progress => //6
 public class SplitArray3EqualSubArray {
 
-    // Function to determine if array arr[]
-    // can be split into three equal sum sets.
+    // Function to determine if array arr[] can be split into three equal sum sets.
     static int findSplit(int []array)
     {
         int n = array.length;
@@ -28,8 +27,7 @@ public class SplitArray3EqualSubArray {
         // variable to store prefix sum
         int prefixSum = 0;
 
-        // variables to store indices which
-        // have prefix sum divisible by S/3.
+        // variables to store indices which have prefix sum divisible by S/3.
         int index1 = -1, index2 = -1;
 
         // variable to store sum of
@@ -41,13 +39,11 @@ public class SplitArray3EqualSubArray {
         for (int i = 1; i < n; i++)
             S += array[i];
 
-        // Check if array can be split in
-        // three equal sum sets or not.
+        // Check if array can be split in three equal sum sets or not.
         if(S % 3 != 0)
             return 0;
 
-        // Variables to store sum S/3
-        // and 2*(S/3).
+        // Variables to store sum S/3 and 2*(S/3).
         int S1 = S / 3;
         int S2 = 2 * S1;
 
@@ -55,28 +51,22 @@ public class SplitArray3EqualSubArray {
         {
             prefixSum += array[i];
 
-            // If prefix sum is divisible by S/3
-            // and this is the first index where
-            // sum is divisible then store
-            // current index.
+            // If prefix sum is divisible by S/3 and this is the first index where
+            // sum is divisible then store current index.
             if (prefixSum % S1 == 0 && index1 == -1)
                 index1 = i;
 
-                // If prefix sum is divisible by 2*(S/3)
-                // then store current index as second
-                // index.
+                // If prefix sum is divisible by 2*(S/3) then store current index as second index.
             else if(prefixSum % S2 == 0)
             {
                 index2 = i;
 
-                // Come out of the loop as both the
-                // required indices are found.
+                // Come out of the loop as both the required indices are found.
                 break;
             }
         }
 
-        // If both the indices are found
-        // then print them.
+        // If both the indices are found then print them.
         if (index1 != -1 && index2 != -1)
         {
             System.out.print("(" + index1 + ", " + index2 + ")");

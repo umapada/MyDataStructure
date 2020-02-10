@@ -43,7 +43,8 @@ import java.util.HashMap;
  * If the added element is not present in hM, add it to hM and do “dist_count++”
  * Else (the added element appeared multiple times), increment its count in hM
  */
-
+//Progress => //4
+//Important
 public class CountDistinctElementsWindowSizeK {
 
     public static void main(String arg[])

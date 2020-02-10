@@ -6,6 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
+
 public class TEST {
     private List<String> names;
 
@@ -13,16 +14,11 @@ public class TEST {
 
     public static void main(String[] args) throws Exception {
 
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
 
-        long a = new Date().getTime();
-        System.out.println(F2(48));
-        System.out.println(new Date().getTime() - a);
-        System.out.println("---------------");
 
-         a = new Date().getTime();
-        System.out.println(F(20));
-        System.out.println(new Date().getTime() - a);
-
+        Deque dq = new LinkedList();
+        
 
 
     }

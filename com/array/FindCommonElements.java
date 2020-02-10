@@ -1,4 +1,4 @@
-package com.Hashing;
+package com.array;
 
 /**
  * Find common elements in three sorted arrays
@@ -29,7 +29,7 @@ package com.Hashing;
  * Else If x > z and y > z), we can simply move ahead in ar3[] as z cannot be a common element.
  */
 
-
+//Progress => //4
 public class FindCommonElements {
 
     // This function prints common elements in ar1

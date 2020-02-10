@@ -1,4 +1,5 @@
 package com.Tree;
+import java.util.*;
 
 /*
 
@@ -51,18 +52,31 @@ The following are steps to print Bottom View of Binary Tree.
  */
 
 
-import java.util.*;
-
-//Tree class
-class Tree
+// Main driver class
+//Progress => //4
+public class BottomViewBinaryTree
 {
+    public static void main(String[] args)
+    {
+        TreeNode root = new TreeNode(20);
+        root.left = new TreeNode(8);
+        root.right = new TreeNode(22);
+        root.left.left = new TreeNode(5);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(4);
+        root.right.right = new TreeNode(25);
+        root.left.right.left = new TreeNode(10);
+        root.left.right.right = new TreeNode(14);
+        BottomViewBinaryTree tree = new BottomViewBinaryTree(root);
+        System.out.println("Bottom view of the given binary tree:");
+        tree.bottomView();
+    }
+
+
     TreeNode root; //root node of tree
 
-    // Default constructor
-    public Tree() {}
-
     // Parameterized tree constructor
-    public Tree(TreeNode node)
+    public BottomViewBinaryTree(TreeNode node)
     {
         root = node;
     }
@@ -117,25 +131,5 @@ class Tree
         });
 
 
-    }
-}
-
-// Main driver class
-public class BottomViewBinaryTree
-{
-    public static void main(String[] args)
-    {
-        TreeNode root = new TreeNode(20);
-        root.left = new TreeNode(8);
-        root.right = new TreeNode(22);
-        root.left.left = new TreeNode(5);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(4);
-        root.right.right = new TreeNode(25);
-        root.left.right.left = new TreeNode(10);
-        root.left.right.right = new TreeNode(14);
-        Tree tree = new Tree(root);
-        System.out.println("Bottom view of the given binary tree:");
-        tree.bottomView();
     }
 }

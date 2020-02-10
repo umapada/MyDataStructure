@@ -35,7 +35,7 @@ import java.util.Stack;
  *
  * Following is the implementation of the above algorithm.
  */
-
+//Progress => //4
  class AlienDictionary {
 
     // An array representing the graph as an adjacency list
@@ -107,15 +107,12 @@ import java.util.Stack;
 
  class OrderOfCharacters
 {
-    // This function fidns and prints order
-    // of characer from a sorted array of words.
-    // alpha is number of possible alphabets
-    // starting from 'a'. For simplicity, this
-    // function is written in a way that only
-    // first 'alpha' characters can be there
-    // in words array. For example if alpha
-    //  is 7, then words[] should contain words
+    // This function finds and prints order of character from a sorted array of words.
+    // alpha is number of possible alphabets starting from 'a'. For simplicity, this
+    // function is written in a way that only first 'alpha' characters can be there
+    // in words array. For example if alpha is 7, then words[] should contain words
     // having only 'a', 'b','c' 'd', 'e', 'f', 'g'
+
     private static void printOrder(String[] words, int alpha)
     {
         // Create a graph with 'aplha' edges

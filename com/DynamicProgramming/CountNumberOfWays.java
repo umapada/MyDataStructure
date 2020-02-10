@@ -33,7 +33,7 @@ For every possible move (3, 5 and 10), increment values in table.
 
 // Java program to count number of possible ways to a given score can be reached in a game where a move can earn 3 or 5 or 10
 import java.util.Arrays;
-
+//Progress => //4
 class CountNumberOfWays
 {
     // Returns number of ways to reach score n
@@ -49,11 +49,11 @@ class CountNumberOfWays
         // One by one consider given 3 moves and update the table[] values after the index greater than or equal to
         // the value of the picked move
         for (i = 3; i <= n; i++)
-            table[i] += table[i - 3];
+            table[i] = table[i] + table[i - 3];
         for (i = 5; i <= n; i++)
-            table[i] += table[i - 5];
+            table[i] = table[i] + table[i - 5];
         for (i = 10; i <= n; i++)
-            table[i] += table[i - 10];
+            table[i] = table[i] + table[i - 10];
 
         return table[n];
     }

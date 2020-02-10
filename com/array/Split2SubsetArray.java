@@ -42,6 +42,7 @@ isSubsetSum (arr, n, sum/2) = isSubsetSum (arr, n-1, sum/2) ||
 //Time Complexity: O(sum*n)
 //Auxiliary Space: O(sum*n)
 //Important
+//Progress => //6
 public class Split2SubsetArray {
 
     // A utility function that returns true if there is a

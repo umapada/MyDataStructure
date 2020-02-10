@@ -39,7 +39,7 @@ package com.array;
  * // there is no equilibrium index
  */
 
-
+//Progress => //4
 public class EquilibriumIndexOfAnArray {
 
 

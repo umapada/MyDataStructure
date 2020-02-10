@@ -20,7 +20,7 @@ package com.Bit_Operation;
  * 3rd bit of 15 is already set.
  */
 
-
+//Progress => //6
 public class SetTheKThBit {
 
     /**
