@@ -35,7 +35,7 @@ package com.DynamicProgramming;
  *   n ==> Number of Eggs
  *   eggDrop(n, k) ==> Minimum number of trials needed to find the critical
  *                     floor in worst case.
- *   eggDrop(n, k) = 1 + min{max(eggDrop(n - 1, x - 1), eggDrop(n, k - x)):
+ *   eggDrop(n, k) = 1 + min{min, max(eggDrop(n - 1, x - 1), eggDrop(n, k - x)):
  *                  x in {1, 2, ..., k}}
  */
 

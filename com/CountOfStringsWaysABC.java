@@ -10,6 +10,9 @@ package com; /**
  * Below strings follow given constraints:
  * aaa aab aac aba abc aca acb acc baa
  * bac bca bcc caa cab cac cba cbc cca ccb
+ * abc
+ * aab aac baa bcc caa cca ccb
+ *
  *
  * Input  : n = 4
  * Output : 39

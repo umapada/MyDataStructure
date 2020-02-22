@@ -1,8 +1,7 @@
 package com.Tree;
 
 
-/* Java program to determine if binary tree is 
-height balanced or not */
+/* Java program to determine if binary tree is height balanced or not */
 //Progress => //4
 class IsBinaryTreeBlanaced
 {
@@ -23,9 +22,7 @@ class IsBinaryTreeBlanaced
      lh = height(node.left);
      rh = height(node.right);
 
-     if (Math.abs(lh - rh) <= 1
-             && isBalanced(node.left)
-             && isBalanced(node.right)) 
+     if (Math.abs(lh - rh) <= 1 && isBalanced(node.left) && isBalanced(node.right))
          return true;
 
      /* If we reach here then tree is not height-balanced */
@@ -33,8 +30,7 @@ class IsBinaryTreeBlanaced
  }
 
  /* UTILITY FUNCTIONS TO TEST1 isBalanced() FUNCTION */
- /*  The function Compute the "height" of a tree. Height is the
-     number of nodes along the longest path from the root node
+ /*  The function Compute the "height" of a tree. Height is the number of nodes along the longest path from the root node
      down to the farthest leaf node.*/
  int height(TreeNode node) 
  {
@@ -42,8 +38,7 @@ class IsBinaryTreeBlanaced
      if (node == null)
          return 0;
 
-     /* If tree is not empty then height = 1 + max of left
-      height and right heights */
+     /* If tree is not empty then height = 1 + max of left height and right heights */
      return 1 + Math.max(height(node.left), height(node.right));
  }
 

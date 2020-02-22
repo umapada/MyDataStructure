@@ -47,7 +47,20 @@ class DiameterBinaryTree
            height and right heights */
         return (1 + Math.max(height(node.left), height(node.right)));
     }
- 
+
+    static int  d = 0;
+    static int D(TreeNode root){
+        if (root == null) {
+            return 0;
+        }
+        int l = D(root.left);
+        int r = D(root.right);
+        if(d < l + r){
+            d = l + r;
+        }
+        return 1 + Math.max(l,r);
+    }
+
     public static void main(String args[])
     {
         /* creating a binary tree and entering the nodes */
@@ -58,7 +71,8 @@ class DiameterBinaryTree
         tree.root.left.left = new TreeNode(4);
         tree.root.left.right = new TreeNode(5);
  
-        System.out.println("The diameter of given binary tree is : "
-                           + tree.diameter());
+        System.out.println("The diameter of given binary tree is : " + tree.diameter());
+        D(tree.root);
+        System.out.println(d + 1);
     }
 }

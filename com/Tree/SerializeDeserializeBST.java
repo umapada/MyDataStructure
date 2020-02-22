@@ -8,12 +8,30 @@ import java.util.*;
  * serialized to a string and this string can be deserialized to the original tree structure.
  */
 
-//Post Order traversal
+//Pre Order traversal
 class Solution {
     private static final String NULL_SYMBOL = "X";
     private static final String DELIMITER = ",";
 
-    public String serialize(TreeNode root) {
+    public static void main(String[] args)
+    {
+        TreeNode root = new TreeNode(20);
+        root.left = new TreeNode(8);
+        root.right = new TreeNode(22);
+        root.left.left = new TreeNode(5);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(4);
+        root.right.right = new TreeNode(25);
+        root.left.right.left = new TreeNode(10);
+        root.left.right.right = new TreeNode(14);
+
+        String str = serialize(root);
+        System.out.println();
+        System.out.println("Serialized tree = " + str);
+        TreeNode d_root = deserialize(str);
+    }
+
+    public static String serialize(TreeNode root) {
 
         // If we have a null symbol...we encode a null symbol
         if (root == null) {
@@ -24,6 +42,7 @@ class Solution {
         String rightSerialized = serialize(root.right);
 
         // Here we append the node we hold ('root') to the other serializations
+
         return root.data + DELIMITER + leftSerialized + rightSerialized;
     }
 
@@ -31,13 +50,13 @@ class Solution {
      * Here we take the string and simply split it on the delimiter. We then have a
      * list of values we can materialize into nodes
      */
-    public TreeNode deserialize(String data) {
+    public static TreeNode deserialize(String data) {
         Queue<String> nodesLeftToMaterialize = new LinkedList<>();
         nodesLeftToMaterialize.addAll(Arrays.asList(data.split(DELIMITER)));
         return deserializeHelper(nodesLeftToMaterialize);
     }
 
-    private TreeNode deserializeHelper(Queue<String> nodesLeftToMaterialize) {
+    private static TreeNode deserializeHelper(Queue<String> nodesLeftToMaterialize) {
 
         String valueForNode = nodesLeftToMaterialize.poll();
 

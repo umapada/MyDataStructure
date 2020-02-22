@@ -12,6 +12,28 @@ public class P {
     public static void main(String[] args)
     {
 
+        StringBuffer sb = new StringBuffer();
+
+        sb.append("aaa");
+        sb.append("bbb");
+
+        sb.insert(0,"AAAAA");
+
+        String a = "psaaabbbb";
+        System.out.println(a.charAt(0));
+
+      String b = "2";
+
+        System.out.println(Character.isDigit(b.toCharArray()[0]));
+
+
+       // a.
+
+
+
+        System.out.println(sb.toString());
+
+
         Deque<Integer> q = new LinkedList<>();
 
     q.add(5);

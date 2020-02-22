@@ -43,12 +43,32 @@ public class CountStairs{
 
     // Driver function
     public static void main(String argc[]){
-        int n = 3;
+        int n = 35;
         System.out.println(findStep(n));
+     //   System.out.println(findStep2(n));
+
     }
+
+
+    public static int findStep2(int n) {
+        if (n == 1 || n == 0) {
+            return 1;
+        }
+        int [] dp = new int[n+1];
+        dp[0] = 1;
+        dp[1] = 1;
+        dp[2] = 2;
+
+        for(int i = 3; i<=n; i ++){
+            dp[i] = dp[i-3] + dp[i-2] + dp[i-1];
+        }
+
+        return dp[n];
+    }
+
+
     // Returns count of ways to reach n-th stair using 1 or 2 or 3 steps.
-    public static int findStep(int n)
-    {
+    public static int findStep(int n) {
         if (n == 1 || n == 0)
             return 1;
         else if (n == 2)

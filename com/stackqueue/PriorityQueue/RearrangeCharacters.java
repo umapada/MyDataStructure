@@ -106,7 +106,7 @@ public class RearrangeCharacters {
 
     // Driver program to test above function
     public static void main(String args[]) {
-        String str = "bbbaz";
+        String str = "bbba";
         rearrangeString(str);
     }
 }
