@@ -1,4 +1,4 @@
-package com;
+package Company;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

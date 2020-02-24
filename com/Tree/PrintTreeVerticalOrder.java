@@ -60,9 +60,9 @@ public class PrintTreeVerticalOrder
             get = new Vector<>();
             get.add(root.data);
         }
-        else
+        else {
             get.add(root.data);
-
+        }
         m.put(hd, get);
 
         // Store nodes in left subtree

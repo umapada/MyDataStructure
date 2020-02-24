@@ -18,6 +18,11 @@ package com.recursion;
  *          [8]
  */
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 /**
  * Since the problem is to get all the possible results, not the best or the number of result, thus we don’t need to
  * consider DP(dynamic programming), recursion is needed to handle it.
@@ -41,6 +46,12 @@ package com.recursion;
  *        function with sum = sum and index = index+1
  */
 public class CombinationalSum {
+   static  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+    Calendar d1 = new GregorianCalendar();
+
+    public static void main(String[] args) throws Exception {
+        Date d = sdf.parse("");
+    }
 
 
 }
