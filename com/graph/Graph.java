@@ -41,12 +41,13 @@ public class Graph{
 	{
 		int indexToBeRemoved=-1;
 		ArrayList<Integer> edgeList=adjacencyList[u];
-		for(int i=0;i<adjacencyList[u].size();i++)
+		for(int i=0; i<adjacencyList[u].size(); i++)
 		{
 			int val=edgeList.get(i);
 			if(val==v)
 			{
 				indexToBeRemoved=i;
+				break;
 			}
 		}
 		edgeList.remove(indexToBeRemoved);
@@ -85,19 +86,10 @@ public class Graph{
 		return adjacencyList[u];
 	}
 
-	/**
-	 * Method to return the adjacency list
-	 * @return
-	 */
-	public ArrayList<Integer>[] getAdjacencyList()
-	{
-		return adjacencyList;
-	}
-	
 	public void printGraph()
 	{
 		ArrayList<Integer> edgeList;
-		for(int i=1;i<=noOfVertices;i++)
+		for(int i=1; i<=noOfVertices; i++)
 		{
 			edgeList=adjacencyList[i];
 			if(edgeList!=null)
@@ -124,7 +116,4 @@ public class Graph{
 		graph.printGraph();
 		
 	}
-	
-	
-
 }

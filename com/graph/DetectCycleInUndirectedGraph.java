@@ -13,42 +13,24 @@ import java.util.List;
 //Progress => //4
 public class DetectCycleInUndirectedGraph {
 
-    private int V;   // No. of vertices
-    private List<Integer> adj[]; // Adjacency List Represntation
-
-    // Constructor
-    DetectCycleInUndirectedGraph(int v) {
-        V = v;
-        adj = new LinkedList[v];
-        for(int i=0; i<v; ++i)
-            adj[i] = new LinkedList();
-    }
-
-    // Function to add an edge into the graph
-    void addEdge(int v,int w) {
-        adj[v].add(w);
-        adj[w].add(v);
-    }
-
-
     public static void main(String args[])
     {
         // Create a graph given in the above diagram
-        DetectCycleInUndirectedGraph g1 = new DetectCycleInUndirectedGraph(5);
+        Graph g1 = new Graph(5);
         g1.addEdge(1, 0);
         g1.addEdge(0, 2);
         g1.addEdge(2, 1);
         g1.addEdge(0, 3);
         g1.addEdge(3, 4);
-        if (g1.isCyclic())
+        if (isCyclic(g1))
             System.out.println("Graph contains cycle");
         else
             System.out.println("Graph doesn't contains cycle");
 
-        DetectCycleInUndirectedGraph g2 = new DetectCycleInUndirectedGraph(3);
+        Graph g2 = new Graph(3);
         g2.addEdge(0, 1);
         g2.addEdge(1, 2);
-        if (g2.isCyclic())
+        if (isCyclic(g2))
             System.out.println("Graph contains cycle");
         else
             System.out.println("Graph doesn't contains cycle");
@@ -56,50 +38,43 @@ public class DetectCycleInUndirectedGraph {
 
     // A recursive function that uses visited[] and parent to detect
     // cycle in subgraph reachable from vertex v.
-    Boolean isCyclicUtil(int v, Boolean visited[], int parent)
+    static boolean isCyclicUtil(Graph graph, int v, Boolean visited[], int parent)
     {
         // Mark the current node as visited
         visited[v] = true;
-        Integer i;
 
         // Recur for all the vertices adjacent to this vertex
-        Iterator<Integer> it = adj[v].iterator();
-        while (it.hasNext())
-        {
-            i = it.next();
-
-            // If an adjacent is not visited, then recur for that adjacent
-            if (!visited[i])
+        Iterator<Integer> it = graph.adjacencyList[v].iterator();
+        for (Integer children: graph.getOutEdges(v)) {
+            if (!visited[children])
             {
-                if (isCyclicUtil(i, visited, v))
+                if (isCyclicUtil(graph,children, visited, v))
                     return true;
             }
-
             // If an adjacent is visited and not parent of current vertex, then there is a cycle.
-            else if (i != parent)
+            else if (children != parent)
                 return true;
         }
         return false;
     }
 
     // Returns true if the graph contains a cycle, else false.
-     Boolean isCyclic()
+     static boolean isCyclic(Graph grpah)
     {
         // Mark all the vertices as not visited and not part of
         // recursion stack
-        Boolean visited[] = new Boolean[V];
-        for (int i = 0; i < V; i++)
+        Boolean visited[] = new Boolean[grpah.noOfVertices];
+        for (int i = 0; i < grpah.noOfVertices; i++)
             visited[i] = false;
 
         // Call the recursive helper function to detect cycle in different DFS trees
-        for (int u = 0; u < V; u++) {
+        for (int u = 0; u < grpah.noOfVertices; u++) {
             if (!visited[u]) { // Don't recur for u if already visited
-                if (isCyclicUtil(u, visited, -1)) {
+                if (isCyclicUtil(grpah,u, visited, -1)) {
                     return true;
                 }
             }
         }
-
         return false;
     }
 }

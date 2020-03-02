@@ -40,7 +40,6 @@ import java.lang.*;
 //Progress => //4
 public class CountStairs{
 
-
     // Driver function
     public static void main(String argc[]){
         int n = 35;
@@ -48,7 +47,6 @@ public class CountStairs{
      //   System.out.println(findStep2(n));
 
     }
-
 
     public static int findStep2(int n) {
         if (n == 1 || n == 0) {
@@ -62,10 +60,8 @@ public class CountStairs{
         for(int i = 3; i<=n; i ++){
             dp[i] = dp[i-3] + dp[i-2] + dp[i-1];
         }
-
         return dp[n];
     }
-
 
     // Returns count of ways to reach n-th stair using 1 or 2 or 3 steps.
     public static int findStep(int n) {
@@ -77,5 +73,4 @@ public class CountStairs{
         else
             return findStep(n - 3) + findStep(n - 2) + findStep(n - 1);
     }
-
 }

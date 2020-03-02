@@ -28,21 +28,9 @@ import java.util.List;
 //Progress => //4
 public class DetectCycleInDirectedGraph {
 
-    private final int V;
-    private final List<List<Integer>> adj;
-
-    public DetectCycleInDirectedGraph(int V)
-    {
-        this.V = V;
-        adj = new ArrayList<>(V);
-
-        for (int i = 0; i < V; i++)
-            adj.add(new LinkedList<>());
-    }
-
     public static void main(String[] args)
     {
-        DetectCycleInDirectedGraph graph = new DetectCycleInDirectedGraph(4);
+        Graph graph = new Graph(4);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
         graph.addEdge(1, 2);
@@ -50,55 +38,49 @@ public class DetectCycleInDirectedGraph {
         graph.addEdge(2, 3);
         graph.addEdge(3, 3);
 
-        if(graph.isCyclic())
+        if(isCyclic(graph))
             System.out.println("Graph contains cycle");
         else
             System.out.println("Graph doesn't contain cycle");
     }
 
-    private boolean isCyclicUtil(int i, boolean[] visited, boolean[] recStack)
+    private static boolean isCyclicUtil(Graph graph, int i, boolean[] visitedArray, boolean[] recStackArray)
     {
 
         // Mark the current node as visited and part of recursion stack
-        if (recStack[i]) {
+        if (recStackArray[i]) {
             return true;
         }
 
-        if (visited[i]) {
+        if (visitedArray[i]) {
             return false;
         }
 
-        visited[i] = true;
+        visitedArray[i] = true;
 
-        recStack[i] = true;
-        List<Integer> children = adj.get(i);
+        recStackArray[i] = true;
+        List<Integer> children = graph.getOutEdges(i);
 
         for (Integer c: children) {
-            if (isCyclicUtil(c, visited, recStack)) {
+            if (isCyclicUtil(graph,c, visitedArray, recStackArray)) {
                 return true;
             }
         }
-
-        recStack[i] = false;
+        recStackArray[i] = false;
 
         return false;
     }
 
-    private void addEdge(int source, int dest) {
-        adj.get(source).add(dest);
-    }
-
-    private boolean isCyclic()
+    private static boolean isCyclic(Graph graph)
     {
 
         // Mark all the vertices as not visited and not part of recursion stack
-        boolean[] visited = new boolean[V];
-        boolean[] recStack = new boolean[V];
-
+        boolean[] visitedArray = new boolean[graph.noOfVertices];
+        boolean[] recStackArray = new boolean[graph.noOfVertices];
 
         // Call the recursive helper function to detect cycle in different DFS trees
-        for (int i = 0; i < V; i++)
-            if (isCyclicUtil(i, visited, recStack))
+        for (int i = 0; i < graph.noOfVertices; i++)
+            if (isCyclicUtil(graph, i, visitedArray, recStackArray))
                 return true;
 
         return false;

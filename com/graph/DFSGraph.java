@@ -6,51 +6,31 @@ import java.util.*;
 //This class represents a directed graph using adjacency list
 //representation
 class DFSGraph {
-	private int V; // No. of vertices
-
-	// Array of lists for Adjacency List Representation
-	private LinkedList<Integer> adj[];
-
-	// Constructor
-	DFSGraph(int v) {
-		V = v;
-		adj = new LinkedList[v];
-		for (int i = 0; i < v; ++i)
-			adj[i] = new LinkedList<>();
-	}
-
-	// Function to add an edge into the graph
-	void addEdge(int v, int w) {
-		adj[v].add(w); // Add w to v's list.
-	}
-
 	// A function used by DFS
-	void DFSUtil(int v, boolean visited[]) {
+	static void DFSUtil(Graph g, int v, boolean visited[]) {
 		// Mark the current node as visited and print it
 		visited[v] = true;
 		System.out.print(v + " ");
 
 		// Recur for all the vertices adjacent to this vertex
-		Iterator<Integer> i = adj[v].listIterator();
-		while (i.hasNext()) {
-			int n = i.next();
-			if (!visited[n])
-				DFSUtil(n, visited);
-		}
+		g.adjacencyList[v].stream().forEach(x->{
+			if (!visited[x])
+				DFSUtil(g, x, visited);
+		});
 	}
 
 	// The function to do DFS traversal. It uses recursive DFSUtil()
-	void DFS(int v) {
+	static void DFS(Graph g, int v) {
 		// Mark all the vertices as not visited(set as
 		// false by default in java)
-		boolean visited[] = new boolean[V];
+		boolean visited[] = new boolean[g.noOfVertices];
 
 		// Call the recursive helper function to print DFS traversal
-		DFSUtil(v, visited);
+		DFSUtil(g, v, visited);
 	}
 
 	public static void main(String args[]) {
-		DFSGraph g = new DFSGraph(4);
+		Graph g = new Graph(4);
 
 		g.addEdge(0, 1);
 		g.addEdge(0, 2);
@@ -60,6 +40,6 @@ class DFSGraph {
 		g.addEdge(3, 3);
 
 		System.out.println("Following is Depth First Traversal " + "(starting from vertex 2)");
-		g.DFS(2);
+		DFS(g, 2);
 	}
 }

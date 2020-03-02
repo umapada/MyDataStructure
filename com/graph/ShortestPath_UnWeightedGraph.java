@@ -2,7 +2,8 @@ package com.graph;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-
+import java.util.LinkedList;
+import java.util.Queue;
 
 
 public class ShortestPath_UnWeightedGraph {
@@ -11,6 +12,16 @@ public class ShortestPath_UnWeightedGraph {
      * The shortest path between two nodes in a graph.
      */
     private static ArrayList<String> shortestPath = new ArrayList<String>();
+
+    public static void main(String [] args) {
+
+        Graph1 grph1 = new Graph1();
+        grph1.addEdge("a", "b");
+        grph1.addEdge("b", "c");
+        grph1.addEdge("a", "d");
+        System.out.println(breadthFirstSearch(grph1, "a", "c"));
+
+    }
 
     /**
      * Finds the shortest path between two nodes (source and destination) in a graph.
@@ -24,19 +35,8 @@ public class ShortestPath_UnWeightedGraph {
      * Requires: source != null, destination != null and must have a name (e.g.
      * cannot be an empty string).
      */
-    
-    public static void main(String [] args) {
-    	
-    	Graph1 grph1 = new Graph1();
-    	grph1.addEdge("a", "b");
-    	grph1.addEdge("b", "c");
-    	grph1.addEdge("a", "d");
-    	System.out.println(breadthFirstSearch(grph1, "a", "c"));
-    	
-    }
-    
-    public static ArrayList<String> breadthFirstSearch(Graph1 graph, String source,
-                                                       String destination) {
+
+    public static ArrayList<String> breadthFirstSearch(Graph1 graph, String source, String destination) {
         shortestPath.clear();
 
         // A list that stores the path.
@@ -49,10 +49,10 @@ public class ShortestPath_UnWeightedGraph {
         }
 
         // A queue to store the visited nodes.
-        ArrayDeque<String> queue = new ArrayDeque<String>();
+        Queue<String> queue = new LinkedList<>();
 
         // A queue to store the visited nodes.
-        ArrayDeque<String> visited = new ArrayDeque<String>();
+        Queue<String> visited = new LinkedList<String>();
 
         queue.offer(source);
         while (!queue.isEmpty()) {

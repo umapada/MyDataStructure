@@ -115,9 +115,7 @@ Fixing second cycle
     {
         for (int j = i; j < N - i - 1; j++)
         {
-
-            // Swap elements of each cycle
-            // in clockwise direction
+            // Swap elements of each cycle in clockwise direction
             int temp = mat[i][j];
             mat[i][j] = mat[N - 1 - j][i];
             mat[N - 1 - j][i] = mat[N - 1 - i][N - 1 - j];

@@ -1,4 +1,4 @@
-package Company;
+package Cmpny;
 
 import java.util.*;
 // A job has a name and one or more instances. Each instance has a globally unique ID number.

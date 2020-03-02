@@ -1,46 +1,28 @@
 package extra;
 
 import java.util.*;
-import java.util.concurrent.Future;
-import java.util.stream.IntStream;
 
-class Parent{
-    String name;
-//    Parent(){
-//        this.name= "Hello Parent";
-//    }
-    Parent(String name){
-        this.name = name;
+@FunctionalInterface
+interface FI{
+    int add(int a, int b);
+    default void print(){
+        System.out.println("Hello from print");
     }
 }
-class Child extends Parent{
 
-    String name;
-//    Child(){
-//        super("pp");
-//    }
-    Child(String name){
-        super(name);
-        this.name = name;
-    }
-}
+
 public class MyClass {
 
     public static void main(String[] args) {
-        int [] a = {3,4,5,2,6,7,7,-3};
+        Integer[] arr = {3,5,2,8,6};
+        List<Integer> list = Arrays.asList(arr);
 
-        String str = "Hello how are you";
+        Collections.sort(list,(a,b) -> Integer.compare(b,a));
 
-        String [] s = str.split(" ");
-
-        int i = s[0].length();
-
-        System.out.println(i);
-
-
-
+        list.stream().forEach(x->{
+            System.out.println(x);
+        });
     }
-
 
 
 }

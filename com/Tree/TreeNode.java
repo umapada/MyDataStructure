@@ -4,6 +4,7 @@ package com.Tree;
 public class TreeNode
 {
  public int data;
+    public int val;
  public TreeNode left, right, parent;
     int hd; //Horizontal Distance
  public TreeNode(int d)

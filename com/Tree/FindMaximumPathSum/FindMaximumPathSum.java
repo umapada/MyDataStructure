@@ -30,7 +30,7 @@ class FindMaximumPathSum {
         if (node.left != null && node.right != null) {
             // Update result if needed
             res.val = Math.max(res.val, ls + rs + node.data);
-            // Return maxium possible value for root being on one side
+            // Return maximum possible value for root being on one side
             return Math.max(ls, rs) + node.data;
         }
         // If any of the two children is empty, return root sum for root being on one side

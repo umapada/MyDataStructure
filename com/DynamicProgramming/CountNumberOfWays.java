@@ -39,8 +39,7 @@ class CountNumberOfWays
     // Returns number of ways to reach score n
     static int count(int n)
     {
-        // table[i] will store count of solutions for
-        // value i.
+        // table[i] will store count of solutions for value i.
         int table[] = new int[n + 1], i;
         // Initialize all table values as 0
         Arrays.fill(table, 0);

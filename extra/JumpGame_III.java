@@ -6,6 +6,8 @@ package extra;
  * to any index with value 0.
  */
 
+import java.util.Arrays;
+
 /**
  * Example 1:
  * Input: arr = [4,2,3,0,3,1,2], start = 5
@@ -44,6 +46,7 @@ public class JumpGame_III {
 
     public static void main(String[] args) {
        int [] arr = {4,2,3,0,3,1,2};
+
        int start = 6;
         System.out.println(canReach(arr,start));
     }

@@ -45,17 +45,14 @@ public class MaximumSubarraySumK {
                 max = Math.max(max, i+1);
             }
 
-            int diff = sum-k;
-
-            if(map.containsKey(diff)){
-                max = Math.max(max, i-map.get(diff));
+            if(map.containsKey(sum-k)){
+                max = Math.max(max, i-map.get(sum-k));
             }
 
             if(!map.containsKey(sum)){
                 map.put(sum, i);
             }
         }
-
 
         return max;
     }
