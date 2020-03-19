@@ -39,7 +39,19 @@ public class DesignPhoneDirectory {
 
     BitSet bitset;
     int max; // max limit allowed
-    int smallestFreeIndex; // current smallest index of the free bit
+    int smallestFreeIndex=111; // current smallest index of the free bit
+
+
+    public static void main(String[] args) {
+        DesignPhoneDirectory d = new DesignPhoneDirectory(3);
+        System.out.println(d.get());
+        System.out.println(d.get());
+
+        System.out.println(d.get());
+        System.out.println(d.get());
+
+
+    }
 
     public DesignPhoneDirectory(int maxNumbers) {
         this.bitset = new BitSet(maxNumbers);
