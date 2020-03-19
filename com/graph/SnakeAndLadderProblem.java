@@ -1,5 +1,8 @@
 package com.graph;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Snake and Ladder Problem
  * Given a snake and ladder board, find the minimum number of dice throws required to reach the destination or last
@@ -21,9 +24,6 @@ package com.graph;
  * There can be other solutions as well like (2, 2, 6), (2, 4, 4), (2, 3, 5).. etc.
  */
 
-
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * The idea is to consider the given snake and ladder board as a directed graph with number of vertices equal to the
@@ -69,12 +69,9 @@ public class SnakeAndLadderProblem {
         System.out.println("Min Dice throws required is " + getMinDiceThrows(moves, N));
     }
 
-    // This function returns minimum number of dice
-    // throws required to Reach last cell from 0'th cell
-    // in a snake and ladder game. move[] is an array of
-    // size N where N is no. of cells on board If there
-    // is no snake or ladder from cell i, then move[i]
-    // is -1 Otherwise move[i] contains cell to which
+    // This function returns minimum number of dice throws required to Reach last cell from 0'th cell
+    // in a snake and ladder game. move[] is an array of size N where N is no. of cells on board If there
+    // is no snake or ladder from cell i, then move[i] is -1 Otherwise move[i] contains cell to which
     // snake or ladder at i takes to.
     static int getMinDiceThrows(int move[], int n)
     {
@@ -94,27 +91,23 @@ public class SnakeAndLadderProblem {
             qe = q.remove();
             int v = qe.v;
 
-            // If front vertex is the destination
-            // vertex, we are done
+            // If front vertex is the destination vertex, we are done
             if (v == n - 1)
                 break;
 
-            // Otherwise dequeue the front vertex and
-            // enqueue its adjacent vertices (or cell
+            // Otherwise dequeue the front vertex and enqueue its adjacent vertices (or cell
             // numbers reachable through a dice throw)
             for (int j = v + 1; j <= (v + 6) && j < n; ++j)
             {
                 // If this cell is already visited, then ignore
                 if (visited[j] == 0)
                 {
-                    // Otherwise calculate its distance and
-                    // mark it as visited
+                    // Otherwise calculate its distance and mark it as visited
                     qentry a = new qentry();
                     a.dist = (qe.dist + 1);
                     visited[j] = 1;
 
-                    // Check if there a snake or ladder at 'j'
-                    // then tail of snake or top of ladder
+                    // Check if there a snake or ladder at 'j' then tail of snake or top of ladder
                     // become the adjacent of 'i'
                     if (move[j] != -1)
                         a.v = move[j];
@@ -125,8 +118,7 @@ public class SnakeAndLadderProblem {
             }
         }
 
-        // We reach here when 'qe' has last vertex
-        // return the distance of vertex in 'qe'
+        // We reach here when 'qe' has last vertex return the distance of vertex in 'qe'
         return qe.dist;
     }
 

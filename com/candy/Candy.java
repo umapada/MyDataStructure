@@ -30,7 +30,6 @@ public class Candy {
         if (ratings == null || ratings.length == 0) {
             return 0;
         }
-
         int[] candies = new int[ratings.length];
         candies[0] = 1;
         //from let to right
@@ -43,7 +42,6 @@ public class Candy {
             }
         }
         int result = candies[ratings.length - 1];
-
         //from right to left
         for (int i = ratings.length - 2; i >= 0; i--) {
             int cur = 1;
@@ -53,7 +51,6 @@ public class Candy {
             result += Math.max(cur, candies[i]);
             candies[i] = cur;
         }
-
         return result;
     }
 

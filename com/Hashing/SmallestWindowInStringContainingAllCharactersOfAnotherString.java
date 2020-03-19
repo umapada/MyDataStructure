@@ -71,8 +71,7 @@ public class SmallestWindowInStringContainingAllCharactersOfAnotherString {
             hash_str[str.charAt(j)]++;
 
             // If string's char matches with pattern's char then increment count
-            if (hash_pat[str.charAt(j)] != 0 &&
-                    hash_str[str.charAt(j)] <= hash_pat[str.charAt(j)] )
+            if (hash_pat[str.charAt(j)] != 0 && hash_str[str.charAt(j)] <= hash_pat[str.charAt(j)] )
                 count++;
 
             // if all the characters are matched

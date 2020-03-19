@@ -14,8 +14,7 @@ package com.Hashing;
 
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * All of the above approaches work in O(n Log n) time where n is total number of elements. In this post, a new
@@ -34,7 +33,7 @@ public class SortElementsByFrequency {
 
     // Driver program
     public static void main(String[] args) throws IOException {
-        int a[] = { 2, 5, 2, 6, -1, 9999999, 5, 8, 8, 8 };
+        int a[] = { 2, 5, 2, 6,10, -1, 9999999, 5, 8, 8, 8 };
         System.out.println(sortByFrequency(a, a.length));
     }
 

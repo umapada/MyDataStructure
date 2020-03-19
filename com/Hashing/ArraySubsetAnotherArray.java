@@ -47,8 +47,7 @@ public class ArraySubsetAnotherArray {
             System.out.println("arr2 is not a subset of arr1");
     }
 
-    static boolean isSubset(int arr1[], int arr2[], int m,
-                            int n)
+    static boolean isSubset(int arr1[], int arr2[], int m, int n)
     {
         Set<Integer> hset= new HashSet<>();
 
@@ -59,8 +58,7 @@ public class ArraySubsetAnotherArray {
                 hset.add(arr1[i]);
         }
 
-        // loop to check if all elements of arr2 also
-        // lies in arr1
+        // loop to check if all elements of arr2 also lies in arr1
         for(int i = 0; i < n; i++)
         {
             if(!hset.contains(arr2[i]))

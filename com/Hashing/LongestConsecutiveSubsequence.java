@@ -2,7 +2,8 @@ package com.Hashing;
 
 /**
  * Longest Consecutive Subsequence
- * Given an array of integers, find the length of the longest sub-sequence such that elements in the subsequence are consecutive integers, the consecutive numbers can be in any order.
+ * Given an array of integers, find the length of the longest sub-sequence such that elements in the subsequence are consecutive integers,
+ * the consecutive numbers can be in any order.
  * Examples:
  *
  * Input: arr[] = {1, 9, 3, 10, 4, 20, 2}
@@ -61,8 +62,7 @@ public class LongestConsecutiveSubsequence {
                     j++;
 
                 // update  optimal length if this length is more
-                if (ans<j-arr[i])
-                    ans = j-arr[i];
+                ans = Math.max(ans, j - arr[i]);
             }
         }
         return ans;

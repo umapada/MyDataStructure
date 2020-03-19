@@ -8,71 +8,28 @@ import java.util.stream.Collectors;
 
 
 public class TEST {
-    private List<String> names;
 
-    static int p = 0;
-
+    static String out = "NO";
     public static void main(String[] args) throws Exception {
 
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+    MAT(1,1,1000,1000);
 
-
-        Deque dq = new LinkedList();
-        
-
-
+        System.out.println(out);
     }
 
-
-
-    static int F(int n){
-        int out;
-        if(n<=1)
-            return n;
-      //  }else{
-            return F(n-1) + F(n-2);
-      //  }
-
-    }
-
-
-    static int F2(int n){
-        int [] p = new int [n];
-
-        p[0] = 1;
-        p[1] = 1;
-
-        for (int i =2; i< n ; i ++){
-            p[i] = p[i-1] + p[i-2];
+    //TODO Going to infinite loop for 2 2
+    static void  MAT(int i, int j, int targetI, int targetJ){
+        if(i<1 || j < 1 || i>2000 || j >2000 || i> targetI || j > targetJ){
+            return;
         }
-
-        return p[n-1];
-    }
-
-    private static void SumInt() {
-        String a = "123a2";
-
-        String temp = "0";
-
-        int sum =0;
-        for (int i =0 ; i < a.length() ; i ++){
-
-            char c = a.charAt(i);
-            if(Character.isDigit(c)){
-               temp+=c;
-            }else{
-                sum = sum + Integer.parseInt(temp);
-                temp="0";
-            }
-
-
-
+        if(i == targetI && j == targetJ){
+                out = "Yes";
+                return;
+        }else{
+                  MAT(2*i, j, targetI, targetJ);
+                  MAT(i, j-i, targetI, targetJ);
+                  MAT(i-j, j, targetI, targetJ);
         }
-
-        sum = sum + Integer.parseInt(temp);
-
-        System.out.println(sum);
     }
-
 
 }

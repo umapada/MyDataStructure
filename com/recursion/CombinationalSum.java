@@ -46,12 +46,5 @@ import java.util.GregorianCalendar;
  *        function with sum = sum and index = index+1
  */
 public class CombinationalSum {
-   static  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-    Calendar d1 = new GregorianCalendar();
-
-    public static void main(String[] args) throws Exception {
-        Date d = sdf.parse("");
-    }
-
 
 }

@@ -24,38 +24,34 @@ import java.util.HashMap;
 //TODO
 public class MaximumSubarraySumK {
 
-
     public static void main(String[] args) {
         int num[] = {3,2,3,1,4,-1,2,-2,1,1,3};
+      //  int num[] = {1, -1, 5, -2, 3};
         int out = maxSubArrayLen(num, 8);
-
         System.out.println(out);
     }
 
     public static int maxSubArrayLen(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-
         int max = 0;
-
         int sum = 0;
         for(int i=0; i<nums.length; i++){
             sum += nums[i];
-
-            if(sum==k){
+            if(sum == k){
                 max = Math.max(max, i+1);
             }
 
-            if(map.containsKey(sum-k)){
-                max = Math.max(max, i-map.get(sum-k));
+            Integer sum_minusK_index = map.get(sum-k);
+            if(sum_minusK_index != null){
+                max = Math.max(max, i-sum_minusK_index);
             }
 
-            if(!map.containsKey(sum)){
-                map.put(sum, i);
-            }
+            map.putIfAbsent(sum, i);
+
+//            if(!map.containsKey(sum)){
+//                map.put(sum, i);
+//            }
         }
-
         return max;
     }
-
-
 }
