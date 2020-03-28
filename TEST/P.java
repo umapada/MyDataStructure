@@ -11,10 +11,7 @@ public class P {
         BlockingQueue<Integer> bq = new ArrayBlockingQueue<>(10);
         Producer p = new Producer(bq);
 
-        Consumer c = new Consumer(bq);
 
-        new Thread(p).start();
-        new Thread(c).start();
 
     }
 }
@@ -39,21 +36,3 @@ class Producer implements Runnable{
     }
 }
 
-class Consumer implements Runnable{
-    BlockingQueue<Integer> bq = null;
-
-    Consumer(BlockingQueue<Integer> bq){
-        this.bq = bq;
-    }
-
-    @Override
-    public void run() {
-        while (true) {
-            try {
-                System.out.println(bq.take());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
