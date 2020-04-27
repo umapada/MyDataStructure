@@ -55,7 +55,7 @@ public class CircularTour
         int end = 1;
         int curr_petrol = arr[start].petrol - arr[start].distance;
 
-        // If current amount of petrol in truck becomes less than 0, then remove the starting petrol pump from tour
+            // If current amount of petrol in truck becomes less than 0, then remove the starting petrol pump from tour
         while(end != start || curr_petrol < 0)
         {
             // If current amount of petrol in truck becomes less than 0, then remove the starting petrol pump from tour

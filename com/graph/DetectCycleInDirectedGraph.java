@@ -30,13 +30,10 @@ public class DetectCycleInDirectedGraph {
 
     public static void main(String[] args)
     {
-        Graph graph = new Graph(4);
+        Graph graph = new Graph(2);
         graph.addEdge(0, 1);
-        graph.addEdge(0, 2);
-        graph.addEdge(1, 2);
-        graph.addEdge(2, 0);
-        graph.addEdge(2, 3);
-        graph.addEdge(3, 3);
+        graph.addEdge(1, 0);
+
 
         if(isCyclic(graph))
             System.out.println("Graph contains cycle");
@@ -85,6 +82,8 @@ public class DetectCycleInDirectedGraph {
 
         return false;
     }
+
+
 
 
 }

@@ -59,7 +59,7 @@ public class LongestSubstringWithKUniqueChar {
         sChar[s.charAt(0)]++;
         for(int i=1; i< s.length(); i++){
 
-            sChar[s.charAt(i) ] ++;
+            sChar[s.charAt(i)] ++;
             end_window++;
 
             while (!valid(k)){

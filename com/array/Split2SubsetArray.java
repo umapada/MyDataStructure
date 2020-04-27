@@ -52,7 +52,8 @@ public class Split2SubsetArray {
         // Base Cases
         if (sum == 0)
             return true;
-        if (n == 0 && sum != 0)
+     //   if (n == 0 && sum != 0)
+        if (n == 0)
             return false;
 
         // If last element is greater than sum, then ignore it
@@ -88,7 +89,8 @@ public class Split2SubsetArray {
     public static void main (String[] args)
     {
 
-        int arr[] = {3, 1, 5, 9, 12};
+       // int arr[] = {3, 1, 5, 9, 12};
+        int arr[] = {3, -1, 5, 9, -2};
       //  int arr[] = {2,5, 6, 3};
         int n = arr.length;
         if (findPartition(arr, n) == true)

@@ -1,8 +1,6 @@
 package extra;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Given an array, print the Next Greater Element (NGE) for every element. The Next greater Element for an
@@ -59,6 +57,14 @@ public class NextGreaterElement {
        // int arr1[] = { 11, 13, 21, 3 };
         int n = arr.length;
         printNGE(arr, n);
+
+        Map<Integer, Integer> map = NGE(arr);
+        Set<Integer> set = map.keySet();
+        System.out.println("==================");
+        for(Integer i:set){
+            System.out.println(i + " -- > "+ map.get(i));
+        }
+
     }
 
     /* prints element and NGE pair for all elements of arr[] of size n */
@@ -110,6 +116,21 @@ public class NextGreaterElement {
             next = -1;
             System.out.println(element + " -- " + next);
         }
+    }
+
+    static Map<Integer, Integer> NGE(int[] nums) {
+        Stack<Integer> stack = new Stack<>();
+        HashMap<Integer, Integer> map = new LinkedHashMap<>();
+       // int[] res = new int[findNums.length];
+        for (int i = 0; i < nums.length; i++) {
+            while (!stack.empty() && nums[i] > stack.peek())
+                map.put(stack.pop(), nums[i]);
+            stack.push(nums[i]);
+        }
+        while(!stack.empty()){
+            map.put(stack.pop(), -1);
+        }
+        return  map;
     }
 
 

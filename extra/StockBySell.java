@@ -2,7 +2,7 @@ package extra;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Stock Buy Sell to Maximize Profit
 /**
  * The cost of stock on each day is given in an array A[] of size N. Find all the days on which you buy and sell
  * the stock so that in between those days your profit is maximum.

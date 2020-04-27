@@ -40,6 +40,6 @@ class DFSGraph {
 		g.addEdge(3, 3);
 
 		System.out.println("Following is Depth First Traversal " + "(starting from vertex 2)");
-		DFS(g, 2);
+		DFS(g, 3);
 	}
 }

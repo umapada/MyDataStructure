@@ -67,7 +67,9 @@ class MergeOperationsToMakePalindrome
         int ans = 0; // Initialize result
 
         // Start from two corners
-        for (int i=0,j=n-1; i<=j;)
+        int i = 0;
+        int j = n-1;
+        while ( i<=j)
         {
             // If corner elements are same, problem reduces arr[i+1..j-1]
             if (arr[i] == arr[j])

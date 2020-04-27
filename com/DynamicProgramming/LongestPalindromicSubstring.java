@@ -4,6 +4,24 @@ package com.DynamicProgramming;
 /**
  * Longest Palindromic Substring | Set 1
  * Given a string, find the longest substring which is palindrome. For example, if the given string is “forgeeksskeegfor”, the output should be “geeksskeeg”.
+ * <p>
+ * Method 1 ( Brute Force )
+ * The simple approach is to check each substring whether the substring is a palindrome or not. We can run three loops, the outer two loops pick all substrings one by one by fixing the corner characters, the inner loop checks whether the picked substring is palindrome or not.
+ * <p>
+ * Time complexity: O ( n^3 )
+ * Auxiliary complexity: O ( 1 )
+ * <p>
+ * Method 1 ( Brute Force )
+ * The simple approach is to check each substring whether the substring is a palindrome or not. We can run three loops, the outer two loops pick all substrings one by one by fixing the corner characters, the inner loop checks whether the picked substring is palindrome or not.
+ * <p>
+ * Time complexity: O ( n^3 )
+ * Auxiliary complexity: O ( 1 )
+ * <p>
+ * Method 1 ( Brute Force )
+ * The simple approach is to check each substring whether the substring is a palindrome or not. We can run three loops, the outer two loops pick all substrings one by one by fixing the corner characters, the inner loop checks whether the picked substring is palindrome or not.
+ * <p>
+ * Time complexity: O ( n^3 )
+ * Auxiliary complexity: O ( 1 )
  */
 
 /**
@@ -21,8 +39,7 @@ package com.DynamicProgramming;
  */
 
 
-public class LongestPalindromicSubstring
-{
+public class LongestPalindromicSubstring {
     // A utility function to print a substring str[low..high]
     static void printSubStr(String str, int low, int high) {
         System.out.println(str.substring(low, high + 1));
@@ -59,8 +76,7 @@ public class LongestPalindromicSubstring
         for (int k = 3; k <= n; ++k) {
 
             // Fix the starting index
-            for (int i = 0; i < n - k + 1; ++i)
-            {
+            for (int i = 0; i < n - k + 1; ++i) {
                 // Get the ending index of substring from
                 // starting index i and length k
                 int j = i + k - 1;
@@ -68,8 +84,7 @@ public class LongestPalindromicSubstring
                 // checking for sub-string from ith index to
                 // jth index iff str.charAt(i+1) to
                 // str.charAt(j-1) is a palindrome
-                if (table[i + 1][j - 1] && str.charAt(i) ==
-                        str.charAt(j)) {
+                if (table[i + 1][j - 1] && str.charAt(i) == str.charAt(j)) {
                     table[i][j] = true;
 
                     if (k > maxLength) {
@@ -89,8 +104,7 @@ public class LongestPalindromicSubstring
     public static void main(String[] args) {
 
         String str = "forgeeksskeegfor";
-        System.out.println("Length is: " +
-                longestPalSubstr(str));
+        System.out.println("Length is: " + longestPalSubstr(str));
     }
 }
 /*

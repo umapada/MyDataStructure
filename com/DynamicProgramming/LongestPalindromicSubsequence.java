@@ -40,10 +40,6 @@ import java.util.Arrays;
 
 class LongestPalindromicSubsequence {
 
-    // A utility function to get max of two integers
-    static int max(int x, int y) {
-        return (x > y) ? x : y;
-    }
     // Returns the length of the longest palindromic subsequence in seq
 
     static int lps(char seq[], int i, int j) {
@@ -63,7 +59,8 @@ class LongestPalindromicSubsequence {
         }
 
         // If the first and last characters do not match
-        return max(lps(seq, i, j - 1), lps(seq, i + 1, j));
+      //  return max(lps(seq, i, j - 1), lps(seq, i + 1, j));
+        return Math.max(lps(seq, i, j - 1), lps(seq, i + 1, j));
     }
 
 

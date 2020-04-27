@@ -5,9 +5,9 @@ package com.array;
 public class RepeatedElementBinarySearch {
 
     public static void main(String[] args) {
-        int arr [] = {2, 3 ,4 , 5,5 ,5 ,5 ,7, 9, 10};
-        int first = binaryFirstSearch(arr, 5, 0, arr.length-1);
-        int last = binaryLastSearch(arr, 5, 0, arr.length-1);
+        int arr [] = {5,7,7,8,8,10};
+        int first = binaryFirstSearch(arr, 8, 0, arr.length-1);
+        int last = binaryLastSearch(arr, 8, 0, arr.length-1);
 
         System.out.println(first + " " + last);
 

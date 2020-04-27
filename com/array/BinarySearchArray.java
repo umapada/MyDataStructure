@@ -4,7 +4,7 @@ public class BinarySearchArray {
 
     public static void main(String[] args) {
         int [] arr = {2, 4, 6, 8, 12};
-        int target = 7;
+        int target = 8;
         System.out.println(bs(arr, target, 0, arr.length -1 ));
     }
 
@@ -12,7 +12,8 @@ public class BinarySearchArray {
        boolean found = false;
 
            if(end >= start){
-               int mid = start + ( end - start )/ 2 ;
+               int midd = start + ( end - start )/ 2 ;
+               int mid = (start + end +1) / 2;
                if(target == arr[mid]){
                    return true;
                } else if(target > arr[mid]){

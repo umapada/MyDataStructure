@@ -16,12 +16,11 @@ public class DetectCycleInUndirectedGraph {
     public static void main(String args[])
     {
         // Create a graph given in the above diagram
-        Graph g1 = new Graph(5);
-        g1.addEdge(1, 0);
-        g1.addEdge(0, 2);
-        g1.addEdge(2, 1);
-        g1.addEdge(0, 3);
-        g1.addEdge(3, 4);
+        Graph g1 = new Graph(3);
+        g1.addEdge(0, 1);
+        g1.addEdge(1, 2);
+        g1.addEdge(2, 0);
+
         if (isCyclic(g1))
             System.out.println("Graph contains cycle");
         else

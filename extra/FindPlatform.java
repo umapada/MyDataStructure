@@ -76,8 +76,9 @@ class FindPlatform {
                 i++;
 
                 // Update result if needed
-                if (plat_needed > result)
-                    result = plat_needed;
+//                if (plat_needed > result)
+//                    result = plat_needed;
+                result = Math.max(result, plat_needed);
             }
             // Else decrement count of platforms needed
             else {

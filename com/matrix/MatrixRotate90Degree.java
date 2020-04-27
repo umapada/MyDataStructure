@@ -27,9 +27,17 @@ Output:
 
  */
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class MatrixRotate90Degree {
 
     public static void main(String[] args) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+        map.entrySet();
 
         int N = 4;
 

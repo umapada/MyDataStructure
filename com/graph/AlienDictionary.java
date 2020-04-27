@@ -85,10 +85,10 @@ import java.util.Stack;
         Stack<Integer> stack = new Stack<>();
         // Mark all the vertices as not visited
         boolean[] visited = new boolean[getNoOfVertices()];
-        for (int i = 0; i < getNoOfVertices(); i++)
-        {
-            visited[i] = false;
-        }
+//        for (int i = 0; i < getNoOfVertices(); i++)
+//        {
+//            visited[i] = false;
+//        }
         // Call the recursive helper function to store Topological
         // Sort starting from all vertices one by one
         for (int i = 0; i < getNoOfVertices(); i++)
@@ -129,7 +129,11 @@ import java.util.Stack;
                 // If we find a mismatching character, then add an edge from character of word1 to that of word2
                 if (word1.charAt(j) != word2.charAt(j))
                 {
-                    graph.addEdge(word1.charAt(j) - 'a', word2.charAt(j)- 'a');
+                    int first = word1.charAt(j) - 'a';
+                    int last = word2.charAt(j) - 'a';
+
+
+                    graph.addEdge(first, last);
                     break;
                 }
             }
@@ -140,7 +144,7 @@ import java.util.Stack;
     // Driver program to test above functions
     public static void main(String[] args)
     {
-        String[] words = {"caa", "aaa", "aab"};
-        printOrder(words, 3);
+        String[] words = {"wrt", "wrf", "er","ett","rftt"};
+        printOrder(words, 5);
     }
 }

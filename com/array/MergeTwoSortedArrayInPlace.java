@@ -8,7 +8,7 @@ import java.util.Arrays;
 //Progress => //5
 class MergeTwoSortedArrayInPlace {
 	static int arr1[] = new int[] { 1, 5, 9, 10, 15, 20 };
-	static int arr2[] = new int[] { 2, 3, 8, 13 };
+	static int arr2[] = new int[] { 2, 3, 8, 13,18,20,25 };
 
 	static void merge(int m, int n) {
 		// Iterate through all elements of ar2[] starting from
@@ -19,14 +19,16 @@ class MergeTwoSortedArrayInPlace {
 			 * ahead till the smallest greater element is not found
 			 */
 			int j, last = arr1[m - 1];
-			for (j = m - 2; j >= 0 && arr1[j] > arr2[i]; j--)
+			for (j = m - 2; j >= 0 && arr1[j] > arr2[i]; j--) {
 				arr1[j + 1] = arr1[j];
+			}
 
 			// If there was a greater element
 			if (j != m - 2 || last > arr2[i]) {
 				arr1[j + 1] = arr2[i];
 				arr2[i] = last;
 			}
+
 		}
 	}
 
