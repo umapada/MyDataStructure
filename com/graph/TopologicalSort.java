@@ -33,36 +33,17 @@ public class TopologicalSort {
         topologicalSort(g);
     }
 
-    // A recursive function used by topologicalSort
-    static void topologicalSortUtil(Graph g ,int v, boolean visited[], Stack stack)
-    {
-        // Mark the current node as visited.
-        visited[v] = true;
-        Integer i;
-
-        // Recur for all the vertices adjacent to this vertex
-        g.adjacencyList[v].stream().forEach(x->{
-            if (!visited[x])
-                topologicalSortUtil(g,x, visited, stack);
-        });
-
-        // Push current vertex to stack which stores result
-        stack.push(new Integer(v));
-    }
-
     // The function to do Topological Sort. It uses recursive topologicalSortUtil()
-   static void topologicalSort(Graph g)
+    static void topologicalSort(Graph g)
     {
         Stack stack = new Stack();
 
         // Mark all the vertices as not visited
         boolean visited[] = new boolean[g.noOfVertices];
-        for (int i = 0; i < g.noOfVertices; i++)
-            visited[i] = false;
 
         // Call the recursive helper function to store Topological Sort starting from all vertices one by one
         for (int i = 0; i < g.noOfVertices; i++) {
-            if (visited[i] == false) {
+            if (!visited[i]) {
                 topologicalSortUtil(g, i, visited, stack);
             }
         }
@@ -70,5 +51,20 @@ public class TopologicalSort {
         // Print contents of stack
         while (!stack.empty())
             System.out.print(stack.pop() + " ");
+    }
+
+    // A recursive function used by topologicalSort
+    static void topologicalSortUtil(Graph g ,int v, boolean visited[], Stack stack)
+    {
+        // Mark the current node as visited.
+        visited[v] = true;
+        // Recur for all the vertices adjacent to this vertex
+        g.adjacencyList[v].stream().forEach(x->{
+            if (!visited[x])
+                topologicalSortUtil(g,x, visited, stack);
+        });
+
+        // Push current vertex to stack which stores result
+        stack.push(v);
     }
 }

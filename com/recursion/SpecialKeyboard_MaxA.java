@@ -55,7 +55,7 @@ package com.recursion;
  * for various breakpoints, thereby giving us the optimal length for N keystrokes.
  */
 
-public class MaximumNumberOfA {
+public class SpecialKeyboard_MaxA {
 
 
     public static void main(String[] args)

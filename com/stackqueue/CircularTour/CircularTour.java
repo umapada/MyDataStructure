@@ -35,13 +35,13 @@ package com.stackqueue.CircularTour;
 public class CircularTour
 {
     // A petrol pump has petrol and distance to next petrol pump
-    static class petrolPump
+    static class PetrolPump
     {
         int petrol;
         int distance;
 
         // constructor
-        public petrolPump(int petrol, int distance)
+        public PetrolPump(int petrol, int distance)
         {
             this.petrol = petrol;
             this.distance = distance;
@@ -49,7 +49,7 @@ public class CircularTour
     }
 
     // The function returns starting point if there is a possible solution, otherwise returns -1
-    static int printTour(petrolPump arr[], int n)
+    static int printTour(PetrolPump arr[], int n)
     {
         int start = 0;
         int end = 1;
@@ -81,9 +81,9 @@ public class CircularTour
     // Driver program to test above functions
     public static void main(String[] args)
     {
-        petrolPump[] arr = {new petrolPump(6, 4),
-                new petrolPump(3, 6),
-                new petrolPump(7, 3)};
+        PetrolPump[] arr = {new PetrolPump(6, 4),
+                new PetrolPump(3, 6),
+                new PetrolPump(7, 3)};
 
         int start = printTour(arr, arr.length);
 

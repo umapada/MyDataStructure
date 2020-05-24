@@ -16,16 +16,13 @@ Output: 1->1->2->3->4->4->5->6
 
 
 public class MergeKSortedList {
-
     public ListNode mergeKLists(ListNode[] lists) {
-
         if(lists == null || lists.length == 0){
             return null;
         }
         if(lists.length == 1){
             return lists[0];
         }
-
         ListNode first = lists[0];
 
         ListNode result = null;
@@ -33,11 +30,8 @@ public class MergeKSortedList {
             result = sortedMerge(first, lists[i]);
             first = result;
         }
-
         return result;
-
     }
-
 
     ListNode sortedMerge(ListNode a, ListNode b)
     {
@@ -59,5 +53,4 @@ public class MergeKSortedList {
         }
         return result;
     }
-
 }

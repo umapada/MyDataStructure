@@ -72,6 +72,6 @@ class DiameterBinaryTree
  
         System.out.println("The diameter of given binary tree is : " + tree.diameter());
         D(tree.root);
-        System.out.println(d + 1);
+        System.out.println(d);
     }
 }

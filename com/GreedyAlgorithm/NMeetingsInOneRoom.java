@@ -23,6 +23,12 @@ package com.GreedyAlgorithm;
  * Output : 6 7 1
  */
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Comparator;
+
 /**
  * Approach:
  * Idea is to solve the problem using the greedy approach which is the same as Activity Selection Problem.
@@ -36,5 +42,46 @@ package com.GreedyAlgorithm;
  * Print the Order of meeting from vector.
  */
 
-public class NMeetingsInOneRoom {
+class Pair {
+    int x,y;
+    Pair(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+}
+
+class NMeetingsInOneRoom {
+
+    static void sortPair(Pair arr[]) {
+        Arrays.sort(arr, (a,b) -> {return a.y - b.y;});
+    }
+
+    public static void main (String[] args) throws IOException {
+
+        int [] start = {1, 3, 0, 5, 8, 5};
+        int [] end =   {2, 4, 6, 7, 9, 9};
+
+            int n = start.length;
+            Pair[] p = new Pair[n];
+            for(int i=0; i<start.length; i++){
+                p[i] = new Pair(start[i], end[i]);
+            }
+
+            Pair[] p2 = p.clone();
+            sortPair(p);
+       int i = 0;
+        System.out.print(i+" ");
+
+        // Consider rest of the activities
+        for (int j = 1; j < n; j++)
+        {
+            // If this activity has start time greater than or equal to the finish time of previously selected activity, then select it
+            if (p2[j].x >= p2[i].y)
+            {
+                System.out.print(j+" ");
+                i = j;
+            }
+        }
+            System.out.println();
+    }
 }

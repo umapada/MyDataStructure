@@ -12,7 +12,7 @@ public class Graph{
 	
 	public Graph(int noOfVertices)
 	{
-		adjacencyList=(ArrayList<Integer>[])new ArrayList[noOfVertices+1];
+		adjacencyList = new ArrayList[noOfVertices+1];
 		this.noOfVertices=noOfVertices;
 		for(int i=0; i < noOfVertices + 1; i++)
 			adjacencyList[i] = new ArrayList<Integer>();

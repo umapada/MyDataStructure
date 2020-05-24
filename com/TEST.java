@@ -9,27 +9,22 @@ import java.util.stream.Collectors;
 
 public class TEST {
 
-    static String out = "NO";
-    public static void main(String[] args) throws Exception {
+    // Returns count of possible paths to reach
+    // cell at row number m and column number n
+    // from the topmost leftmost cell (cell at 1, 1)
+    static int numberOfPaths(int m, int n)
+    {
+        // If either given row number is first or given column number is first
+        if (m == 1 || n == 1)
+            return 1;
 
-    MAT(1,1,1000,1000);
-
-        System.out.println(out);
+        // If diagonal movements are allowed then the last addition is required.
+        return numberOfPaths(m - 1, n) + numberOfPaths(m, n - 1);
+        // + numberOfPaths(m-1, n-1);
     }
 
-    //TODO Going to infinite loop for 2 2
-    static void  MAT(int i, int j, int targetI, int targetJ){
-        if(i<1 || j < 1 || i>2000 || j >2000 || i> targetI || j > targetJ){
-            return;
-        }
-        if(i == targetI && j == targetJ){
-                out = "Yes";
-                return;
-        }else{
-                  MAT(2*i, j, targetI, targetJ);
-                  MAT(i, j-i, targetI, targetJ);
-                  MAT(i-j, j, targetI, targetJ);
-        }
+    public static void main(String args[])
+    {
+        System.out.println(numberOfPaths(3, 3));
     }
-
 }

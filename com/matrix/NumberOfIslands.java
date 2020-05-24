@@ -63,7 +63,7 @@ class NumberOfIslands {
                 int qq = b + d[1];
                 if(0<= pp && pp < row && 0<= qq && qq < col && grid[pp][qq] == '1'){
                     grid[pp][qq] = '2';
-                    int tmp [] = {0,0};
+                    int tmp [] = new int[2];
                     tmp[0]=pp;
                     tmp[1]=qq;
                     q.add(tmp);

@@ -6,6 +6,18 @@ import java.util.*;
 
 //This class represents a directed graph using adjacency list representation
 class BFSGraph {
+	// Driver method to
+	public static void main(String args[]) {
+		Graph g = new Graph(4);
+		g.addEdge(0, 1);
+		g.addEdge(0, 2);
+		g.addEdge(1, 2);
+		g.addEdge(2, 0);
+		g.addEdge(2, 3);
+		g.addEdge(3, 3);
+		System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
+		BFSTraverse(g,2);
+	}
 
 	// prints BFS traversal from a given source s
 	static void BFSTraverse(Graph g, int s) {
@@ -17,7 +29,7 @@ class BFSGraph {
 		visited[s] = true;
 		queue.add(s);
 
-		while (queue.size() != 0) {
+		while (!queue.isEmpty()) {
 			// Dequeue a vertex from queue and print it
 			s = queue.poll();
 			System.out.print(s + " ");
@@ -30,18 +42,5 @@ class BFSGraph {
 				}
 			}
 		}
-	}
-
-	// Driver method to
-	public static void main(String args[]) {
-		Graph g = new Graph(4);
-		g.addEdge(0, 1);
-		g.addEdge(0, 2);
-		g.addEdge(1, 2);
-		g.addEdge(2, 0);
-		g.addEdge(2, 3);
-		g.addEdge(3, 3);
-		System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
-		BFSTraverse(g,2);
 	}
 }

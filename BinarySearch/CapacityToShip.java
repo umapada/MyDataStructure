@@ -11,8 +11,6 @@ ship.
 Return the least weight capacity of the ship that will result in all the packages on the conveyor belt being shipped
 within D days.
 
-
-
 Example 1:
 
 Input: weights = [1,2,3,4,5,6,7,8,9,10], D = 5
@@ -58,9 +56,15 @@ The right bound is sum(A).
  */
 
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 class CapacityToShip {
 
     public static void main(String[] args) {
+
+        Queue<Integer> q = new LinkedList<>();
+
       int [] weights = {1,2,3,4,5,6,7,8,9,10};
         int D = 5;
         int res = shipWithinDays(weights, D);
