@@ -1,7 +1,7 @@
 package TEST;
 
 import extra.ListNode;
-import com.Tree.TreeNode;
+import Tree.TreeNode;
 /*
 Given a binary tree root and a linked list with head as the first node.
 

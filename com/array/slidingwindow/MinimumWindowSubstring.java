@@ -39,7 +39,6 @@ class MinimumWindowSubstring {
                 start++;
             }
         }
-
         return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
     }
 }

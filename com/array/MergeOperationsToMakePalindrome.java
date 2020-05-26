@@ -12,8 +12,6 @@ package com.array;
  *
  * Example :
  *
- *
- *
  * Input : arr[] = {15, 4, 15}
  * Output : 0
  * Array is already a palindrome. So we
@@ -51,21 +49,16 @@ package com.array;
 //Progress => //5
 class MergeOperationsToMakePalindrome
 {
-
-
     // Driver method to test the above function
     public static void main(String[] args)
     {
         int arr[] = new int[]{2, 4, 5, 9, 1} ;
         System.out.println("Count of minimum operations is "+ findMinOps(arr, arr.length));
-
     }
-
     // Returns minimum number of count operations required to make arr[] palindrome
     static int findMinOps(int[] arr, int n)
     {
         int ans = 0; // Initialize result
-
         // Start from two corners
         int i = 0;
         int j = n-1;
@@ -77,7 +70,6 @@ class MergeOperationsToMakePalindrome
                 i++;
                 j--;
             }
-
             // If left element is greater, then we merge right two elements
             else if (arr[i] > arr[j])
             {

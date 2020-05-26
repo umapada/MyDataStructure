@@ -81,8 +81,7 @@ Fixing second cycle
 
     // An Inplace function to rotate a N x N matrix
     // by 90 degrees in anti-clockwise direction
-    static void rotateMatrix(int N, int mat[][])
-    {
+    static void rotateMatrix(int N, int mat[][]) {
         //  ANTI-CLOCKWISE
         // Consider all squares one by one
 //        for (int i = 0; i < N / 2; i++)
@@ -110,43 +109,31 @@ Fixing second cycle
 
         //  CLOCKWISE
 
-            // Traverse each cycle
-    for (int i = 0; i < N / 2; i++)
-    {
-        for (int j = i; j < N - i - 1; j++)
-        {
-            // Swap elements of each cycle in clockwise direction
-            int temp = mat[i][j];
-            mat[i][j] = mat[N - 1 - j][i];
-            mat[N - 1 - j][i] = mat[N - 1 - i][N - 1 - j];
-            mat[N - 1 - i][N - 1 - j] = mat[j][N - 1 - i];
-            mat[j][N - 1 - i] = temp;
+        // Traverse each cycle
+        for (int i = 0; i < N / 2; i++) {
+            for (int j = i; j < N - i - 1; j++) {
+                // Swap elements of each cycle in clockwise direction
+                int temp = mat[i][j];
+                mat[i][j] = mat[N - 1 - j][i];
+                mat[N - 1 - j][i] = mat[N - 1 - i][N - 1 - j];
+                mat[N - 1 - i][N - 1 - j] = mat[j][N - 1 - i];
+                mat[j][N - 1 - i] = temp;
+            }
         }
     }
 
-
-
-
-
-
-    }
-
     // Function to print the matrix
-    static void displayMatrix(int N, int mat[][])
-    {
-        for (int i = 0; i < N; i++)
-        {
+    static void displayMatrix(int N, int mat[][]) {
+        for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++)
                 System.out.print(" " + mat[i][j]);
-
             System.out.print("\n");
         }
         System.out.print("\n");
     }
 
     /* Driver program to test above functions */
-    public static void main (String[] args)
-    {
+    public static void main(String[] args) {
         int N = 4;
 
         // Test Case 1
@@ -174,11 +161,9 @@ Fixing second cycle
                     };*/
 
         // displayMatrix(mat);
-
-        rotateMatrix(N,mat);
-
+        rotateMatrix(N, mat);
         // Print rotated matrix
-        displayMatrix(N,mat);
+        displayMatrix(N, mat);
     }
 
 }

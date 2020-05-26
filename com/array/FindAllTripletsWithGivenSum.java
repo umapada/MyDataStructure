@@ -22,14 +22,6 @@ public class FindAllTripletsWithGivenSum {
     public static void main(String[] args) {
         int nums [] = { 1, 3,4 , 5, 2, 7, 8};
         int target = 10;
-        List<Integer> l = new ArrayList<>();
-        Map<Integer, Integer> map = new HashMap<>();
-        Collection<Integer> list =  map.values();
-for(int i: list){
-
-}
-
-
         findTriplets(nums, target);
     }
 
@@ -52,7 +44,5 @@ for(int i: list){
                 }
             }
         }
-
     }
-
 }

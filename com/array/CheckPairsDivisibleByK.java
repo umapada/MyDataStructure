@@ -19,17 +19,12 @@ public class CheckPairsDivisibleByK
         // Debug prints
         System.out.println("k = " + k);
         printArray (nums, "input  ");
-
         // initialize counts of modulus
         int modulusCounts[] = new int[k];
-
-        // For each number in the array, calculate
-        // modulus and update relevant count
+        // For each number in the array, calculate modulus and update relevant count
         for (int num: nums)
             modulusCounts[num %k]++;
-
         printArray (modulusCounts, "modulus");
-
 
         if (modulusCounts[0] % 2 != 0) // As these will not form pair with anyone else
             return false;
@@ -38,17 +33,13 @@ public class CheckPairsDivisibleByK
             if (modulusCounts[k/2] %2 != 0) // These will also not form pair with anyone else
                 return false;
         }
-
         printArray (modulusCounts, "modulus");
 
         for (int i = 1; i <= k/2; i++)
             if (modulusCounts[i] != modulusCounts[k-i])
                 return false;
-
-
         return true;
     }
-
 
     static void printArray (int arr[], String msg)
     {

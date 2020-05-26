@@ -90,7 +90,7 @@ public class Split2SubsetArray {
     {
 
        // int arr[] = {3, 1, 5, 9, 12};
-        int arr[] = {3, -1, 5, 9, -2};
+        int arr[] = {3, -1, 5, 9, -2, -6, 12};
       //  int arr[] = {2,5, 6, 3};
         int n = arr.length;
         if (findPartition(arr, n) == true)

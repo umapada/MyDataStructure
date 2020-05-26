@@ -27,9 +27,7 @@ Output:
 
  */
 
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class MatrixRotate90Degree {
@@ -66,43 +64,32 @@ public class MatrixRotate90Degree {
                     };*/
 
         // displayMatrix(mat);
-        displayMatrix(N,mat);
+        displayMatrix(N, mat);
 
         int res[][] = roatate(mat);
 
         // Print rotated matrix
-        displayMatrix(N,res);
+        displayMatrix(N, res);
     }
     // Function to print the matrix
-    static void displayMatrix(int N, int mat[][])
-    {
-        for (int i = 0; i < N; i++)
-        {
+    static void displayMatrix(int N, int mat[][]) {
+        for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++)
                 System.out.print(" " + mat[i][j]);
-
             System.out.print("\n");
         }
         System.out.print("\n");
     }
 
-    static int[][] roatate(int mat[][]){
+    static int[][] roatate(int mat[][]) {
         int[][] dest_buffer = new int[mat.length][mat[0].length];
 
-        System.out.println(mat.length +" " + mat[0].length);
-
-        for (int r = 0; r < mat.length; r++){
-            for (int c = 0; c < mat[0].length; c++){
-                dest_buffer [ r ] [ mat.length - c - 1 ] = mat [ c ] [ r ];
+        for (int r = 0; r < mat.length; r++) {
+            for (int c = 0; c < mat[0].length; c++) {
+                dest_buffer[r][mat.length - c - 1] = mat[c][r];
             }
         }
-
-
         return dest_buffer;
-
     }
-
-
-
 }
 

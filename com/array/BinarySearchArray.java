@@ -10,9 +10,8 @@ public class BinarySearchArray {
 
     private static boolean bs(int[] arr, int target, int start, int end){
        boolean found = false;
-
            if(end >= start){
-               int midd = start + ( end - start )/ 2 ;
+               //int mid = start + ( end - start )/ 2 ;
                int mid = (start + end +1) / 2;
                if(target == arr[mid]){
                    return true;
@@ -26,10 +25,6 @@ public class BinarySearchArray {
            else{
                return false;
            }
-
-
-
-
        // return found;
     }
 

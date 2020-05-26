@@ -112,6 +112,11 @@ public class Anagram {
                     System.out.println("Not Anagram");
                     anagram = false;
                     break;
+                }else{
+                    if(map.get(chr2[i]) == 1){
+                        map.remove(chr2[i]);
+                    }else
+                    map.put(chr2[i] , map.get(chr2[i]) - 1);
                 }
             }
             if(anagram) {
