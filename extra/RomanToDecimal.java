@@ -2,7 +2,7 @@ package extra;
 
 /*
 
-Given a Romal numeral, the task is to find its corresponding decimal value.
+Given a Roman numeral, the task is to find its corresponding decimal value.
 
 Example :
 

@@ -1,4 +1,4 @@
-package extra;
+package Interval_CourseSchedule;
 
 /**
  * Minimum Number of Platforms Required for a Railway/Bus Station

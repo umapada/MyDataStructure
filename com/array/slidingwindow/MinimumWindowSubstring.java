@@ -16,12 +16,21 @@ If there is such window, you are guaranteed that there will always be only one u
  */
 
 class MinimumWindowSubstring {
-    public String minWindow(String s, String t) {
+
+    public static void main(String[] args) {
+        String s = "ZZDAOBECODEBANC";
+        String t = "ABC";
+        System.out.println(minWindow(s,t));
+    }
+
+    static String minWindow(String s, String t) {
         int [] map = new int[128];
+        // Initialize the array with target
         for (char c : t.toCharArray()) {
             map[c]++;
         }
-        int start = 0, end = 0, minStart = 0, minLen = Integer.MAX_VALUE, counter = t.length();
+        int start = 0, end = 0, minStart = 0, minLen = Integer.MAX_VALUE,
+                counter = t.length();
 
         while (end < s.length()) {
             final char c1 = s.charAt(end);
