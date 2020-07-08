@@ -1,4 +1,4 @@
-package Interval_CourseSchedule;
+package Schedule;
 /*
 Given a collection of intervals, merge all overlapping intervals.
 

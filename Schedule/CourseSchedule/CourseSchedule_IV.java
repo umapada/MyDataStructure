@@ -1,4 +1,4 @@
-package Interval_CourseSchedule.CourseSchedule;
+package Schedule.CourseSchedule;
 
 /*
 

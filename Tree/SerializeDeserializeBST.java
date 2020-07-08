@@ -9,7 +9,7 @@ import java.util.*;
  */
 
 //Pre Order traversal
-class Solution {
+class SerializeDeserializeBST {
     private static final String NULL_SYMBOL = "X";
     private static final String DELIMITER = ",";
 
@@ -51,8 +51,8 @@ class Solution {
      * list of values we can materialize into nodes
      */
     public static TreeNode deserialize(String data) {
-        Queue<String> nodesLeftToMaterialize = new LinkedList<>();
-        nodesLeftToMaterialize.addAll(Arrays.asList(data.split(DELIMITER)));
+        if(data == null) return null;
+        Queue<String> nodesLeftToMaterialize = new LinkedList<>(Arrays.asList(data.split(DELIMITER)));
         return deserializeHelper(nodesLeftToMaterialize);
     }
 
@@ -71,164 +71,4 @@ class Solution {
         return newNode;
     }
 }
-
 // =========================================
-
-
-public class SerializeDeserializeBST {
-
- //   Java Solution 2 - Preorder Traversal
-
-
-    private TreeNode deserializeArrayOptimized(int[] preorder, int[] currIndex, int min, int max)
-	    {
-	        if (currIndex[0] >= preorder.length) return null;
-
-	        TreeNode root = null;
-
-	        if ((preorder[currIndex[0]] > min) && (preorder[currIndex[0]] < max))
-	        {
-	            root = new TreeNode(preorder[currIndex[0]]);
-	            currIndex[0] += 1;
-	            root.left = deserializeArrayOptimized(preorder, currIndex, min, root.data);
-	            root.right = deserializeArrayOptimized(preorder, currIndex, root.data, max);
-	        }
-
-	        return root;
-	    }
-
-	    private int findDivision(int[] preorder, int value, int low, int high)
-	    {
-	        int i;
-	        for (i = low; i <= high; i++)
-	        {
-	            if (value < preorder[i])
-	                break;
-	        }
-	        return i;
-	    }
-
-	    private TreeNode deserializeArray(int[] preorder, int low, int high)
-	    {
-	        if (low > high) return null;
-
-	        TreeNode root = new TreeNode(preorder[low]);
-
-	        int divIndex = findDivision(preorder, root.data, low+1, high);
-
-	        root.left = deserializeArray(preorder, low + 1, divIndex - 1);
-	        root.right = deserializeArray(preorder, divIndex, high);
-
-	        return root;
-	    }
-
- // Encodes a tree to a single string.
-  String serialize(TreeNode root) {
-     if(root==null)
-         return null;
-
-     Stack<TreeNode> stack = new Stack<TreeNode>();
-     stack.push(root);
-     StringBuilder sb = new StringBuilder();
-
-     while(!stack.isEmpty()){
-         TreeNode h = stack.pop();
-         if(h!=null){
-             sb.append(h.data+",");
-             stack.push(h.right);
-             stack.push(h.left);
-         }else{
-             sb.append("#,");
-         }
-     }
-
-     return sb.toString().substring(0, sb.length()-1);
- }
-
-    // Decodes your encoded data to tree.
-    TreeNode deserialize(String data) {
-        if(data == null)
-            return null;
-
-        int[] t = {0};
-        String[] arr = data.split(",");
-
-        return helper(arr, t);
-    }
-
-    TreeNode helper(String[] arr, int[] t){
-        if(arr[t[0]].equals("#")){
-            return null;
-        }
-
-        TreeNode root = new TreeNode(Integer.parseInt(arr[t[0]]));
-
-        t[0]=t[0]+1;
-        root.left = helper(arr, t);
-        t[0]=t[0]+1;
-        root.right = helper(arr, t);
-
-        return root;
-    }
-
-
-// Java Solution 1 - Level Order Traveral
-
-    // Encodes a tree to a single string.
-    String serialize2(TreeNode root) {
-        ArrayList<String> list = new ArrayList<>();
-        LinkedList<TreeNode> q = new LinkedList<>();
-        q.offer(root);
-
-        while (!q.isEmpty()) {
-            TreeNode h = q.poll();
-            if (h == null) {
-                list.add("#");
-            } else {
-                list.add("" + h.data);
-                q.offer(h.left);
-                q.offer(h.right);
-            }
-        }
-
-        return String.join(",", list);
-    }
-
-    // Decodes your encoded data to tree.
-    TreeNode deserialize2(String data) {
-        String[] arr = data.split(",");
-        if (arr[0].equals("#")) {
-            return null;
-        }
-
-        TreeNode root = new TreeNode(Integer.parseInt(arr[0]));
-        LinkedList<TreeNode> q = new LinkedList<>();
-        q.offer(root);
-
-        int i = 1;
-
-        while (!q.isEmpty()) {
-            TreeNode h = q.poll();
-            if (h != null) {
-                TreeNode left = null;
-                if (!arr[i].equals("#")) {
-                    left = new TreeNode(Integer.parseInt(arr[i]));
-                }
-                h.left = left;
-                q.offer(left);
-                i++;
-
-                TreeNode right = null;
-                if (!arr[i].equals("#")) {
-                    right = new TreeNode(Integer.parseInt(arr[i]));
-                }
-                h.right = right;
-                q.offer(right);
-                i++;
-            }
-        }
-
-        return root;
-    }
-
-}

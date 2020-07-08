@@ -1,32 +1,36 @@
 package TEST;
 
 
-import java.math.BigDecimal;
 import java.util.*;
 
 class TEST {
+    static int count = 0;
+    int i = Integer.MIN_VALUE;
 
-static int count = 0;
     public static void main(String[] nums) {
-        int [] A = new int[5];
-        binary(5, A);
 
-    }
+        LinkedList<Integer> list = new LinkedList<>();
 
-    static void binary(int n, int []A){
-        if(n<1){
-           // Arrays.stream(A)
-            Arrays.stream(A).forEach(System.out::print);
-            System.out.println(" -> "+count++);
-        }else{
-            A[n-1] = 0;
-            binary(n-1, A);
-            A[n-1] = 1;
-            binary(n-1, A);
+        PriorityQueue<Integer> Q = new PriorityQueue<>();
+
+        long l = new Date().getTime();
+
+        String paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.";
+
+        paragraph =  paragraph.replace(',',' ');
+        paragraph =  paragraph.replace('.',' ');
+
+        List<Integer> ll = new ArrayList<>();
+
+
+
+
+        String[] spl = paragraph.split(" ");
+        char[] chr = paragraph.toCharArray();
+        for(String str:spl){
+            System.out.println(str);
         }
     }
-
-
 }
 
 

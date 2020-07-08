@@ -22,11 +22,13 @@ public class TreeNode
 class Node
 {
     int data;
+    int val;
     Node left, right;
 
     Node(int item)
     {
         data = item;
         left = right = null;
+        val = item;
     }
 }

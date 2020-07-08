@@ -3,7 +3,12 @@ package com.array.slidingwindow;
 //Longest Substring - at most K distinct characters
 public class LongestSubstring_K_Distinct_Char {
 
-    public int lengthOfLongestSubstringKDistinct(String s, int k) {
+    public static void main(String[] args) {
+        String s = "ZZDAOBECODEBANC";
+        System.out.println(lengthOfLongestSubstringKDistinct(s,4));
+    }
+
+    static int lengthOfLongestSubstringKDistinct(String s, int k) {
         int[] map = new int[256];
         int start = 0, end = 0, maxLen = Integer.MIN_VALUE, counter = 0;
 

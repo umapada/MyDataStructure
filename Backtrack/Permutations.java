@@ -21,14 +21,18 @@ import java.util.List;
 
 public class Permutations {
 
-    public List<List<Integer>> permute(int[] nums) {
+    public static void main(String[] args) {
+        int [] A = {1,2,3};
+        System.out.println(permute(A));
+    }
+    static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
         // Arrays.sort(nums); // not necessary
         backtrack(list, new ArrayList<>(), nums);
         return list;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums){
+    static void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums){
         if(tempList.size() == nums.length){
             list.add(new ArrayList<>(tempList));
         } else{

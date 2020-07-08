@@ -1,7 +1,13 @@
 package com.array.slidingwindow;
 //Longest Substring - at most 2 distinct characters
 public class LongestSubstring_2_Distinct_Char {
-    public int lengthOfLongestSubstringTwoDistinct(String s) {
+
+    public static void main(String[] args) {
+        String s = "ZZDAOBECODEBANC";
+        System.out.println(lengthOfLongestSubstringTwoDistinct(s));
+    }
+
+    static int lengthOfLongestSubstringTwoDistinct(String s) {
         int[] map = new int[128];
         int start = 0, end = 0, maxLen = 0, counter = 0;
 

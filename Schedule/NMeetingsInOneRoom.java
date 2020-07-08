@@ -1,4 +1,4 @@
-package Interval_CourseSchedule;
+package Schedule;
 
 /**
  * Find maximum meetings in one room
