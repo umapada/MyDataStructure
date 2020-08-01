@@ -59,51 +59,27 @@ else subtract this value by adding the value of next symbol to the running total
 
 public class RomanToDecimal
 {
-    // This function returns value of a Roman symbol
-    int value(char r)
-    {
-        if (r == 'I') return 1;
-        if (r == 'V') return 5;
-        if (r == 'X') return 10;
-        if (r == 'L') return 50;
-        if (r == 'C') return 100;
-        if (r == 'D') return 500;
-        if (r == 'M') return 1000;
-        return -1;
-    }
-    // Finds decimal value of a given romal numeral
-    int romanToDecimal(String str)
-    {
-        // Initialize result
-        int res = 0;
-        for (int i=0; i<str.length(); i++)
-        {
-            // Getting value of symbol s[i]
-            int s1 = value(str.charAt(i));
-            // Getting value of symbol s[i+1]
-            if (i+1 <str.length())
-            {
-                int s2 = value(str.charAt(i+1));
-                // Comparing both values
-                if (s1 >= s2)
-                {
-                    // Value of current symbol is greater or equalto the next symbol
-                    res = res + s1;
-                }
-                else
-                {
-                    res = res + s2 - s1;
-                    i++; // Value of current symbol is
-                    // less than the next symbol
-                }
-            }
-            else
-            {
-                res = res + s1;
-                i++;
-            }
+    //count every Symbol and add its value to the sum,
+    // and minus the extra part of special cases.
+    public int romanToDecimal(String s) {
+        int sum=0;
+        if(s.indexOf ("IV")!=-1) {sum-=2;}
+        if(s.indexOf("IX")!=-1){sum-=2;}
+        if(s.indexOf("XL")!=-1){sum-=20;}
+        if(s.indexOf("XC")!=-1){sum-=20;}
+        if(s.indexOf("CD")!=-1){sum-=200;}
+        if(s.indexOf("CM")!=-1){sum-=200;}
+        char c[]=s.toCharArray();
+        for(int count=0;count < s.length();count++){
+            if(c[count]=='M') sum+=1000;
+            else if(c[count]=='D') sum+=500;
+            else if(c[count]=='C') sum+=100;
+            else if(c[count]=='L') sum+=50;
+            else if(c[count]=='X') sum+=10;
+            else if(c[count]=='V') sum+=5;
+            else if(c[count]=='I') sum+=1;
         }
-        return res;
+        return sum;
     }
     // Driver method
     public static void main(String args[])

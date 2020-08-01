@@ -13,7 +13,7 @@ public class LongestSubstring_No_Repeat_Char {
 
         while (end < s.length()) {
             final char c1 = s.charAt(end);
-            if (map[c1] > 0) counter++;
+            if (map[c1] == 1) counter++;
             map[c1]++;
             end++;
 

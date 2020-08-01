@@ -102,7 +102,6 @@ public class ChainWordsToFormCircle {
                     result.remove(result.size() - 1);
                 }
             }
-
         }
         return false;
     }

@@ -16,7 +16,6 @@ class Edge
 // data structure to store heap nodes
 class Node {
     int vertex, weight;
-
     public Node(int vertex, int weight) {
         this.vertex = vertex;
         this.weight = weight;
@@ -78,57 +77,41 @@ class Dijkstra_Shortest_Weighted_Graph_Path
         printRoute(prev, prev[i]);
         System.out.print(i + " ");
     }
-
     // Run Dijkstra's algorithm on given graph
     public static void shortestPath(GraphD graph, int source, int N)
-    {
+    {// Dijkstra Shortest algorithm for weighted graph
         // create min heap and push source node having distance 0
         PriorityQueue<Node> minHeap = new PriorityQueue<>((lhs, rhs) -> lhs.weight - rhs.weight);
         minHeap.add(new Node(source, 0));
-
         // set infinite distance from source to v initially
         List<Integer> dist = new ArrayList<>(Collections.nCopies(N, Integer.MAX_VALUE));
-
         // distance from source to itself is zero
         dist.set(source, 0);
-
         // boolean array to track vertices for which minimum
         // cost is already found
         boolean[] done = new boolean[N];
         done[0] = true;
-
         // stores predecessor of a vertex (to print path)
         int prev[] = new int[N];
         prev[0] = -1;
-
         // run till minHeap is not empty
         while (!minHeap.isEmpty())
         {
-            // Remove and return best vertex
             Node node = minHeap.poll();
-
-            // get vertex number
             int u = node.vertex;
-
-            // do for each neighbor v of u
             for (Edge edge: graph.adjList.get(u))
             {
                 int v = edge.dest;
                 int weight = edge.weight;
-
                 // Relaxation step
                 if (!done[v] && (dist.get(u) + weight) < dist.get(v))
                 {
                     dist.set(v, dist.get(u) + weight);
                     prev[v] = u;
                     minHeap.add(new Node(v, dist.get(v)));
-                }
-            }
-
-            // marked vertex u as done so it will not get picked up again
+                } }
             done[u] = true;
         }
-
         for (int i = 1; i < N; ++i)
         {
             System.out.print("Path from vertex 0 to vertex " + i + " has minimum cost of " + dist.get(i) + " and the route is [ ");

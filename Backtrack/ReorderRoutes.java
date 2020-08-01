@@ -36,8 +36,14 @@ Input: n = 3, connections = [[1,0],[2,0]]
 Output: 0
  */
 public class ReorderRoutes {
-    int res=0;
-    public int minReorder(int n, int[][] connections) {
+
+    public static void main(String[] args) {
+        int [][] con = {{0,1},{1,3},{2,3},{4,0},{4,5}};
+        System.out.println(minReorder(6,con));
+    }
+
+    static int res=0;
+    static int minReorder(int n, int[][] connections) {
         Map<Integer, List<Integer>> map= new HashMap<>();
         for (int[] c: connections) {
             map.computeIfAbsent(c[0], k->new LinkedList<>()).add(c[1]);
@@ -47,8 +53,10 @@ public class ReorderRoutes {
         dfs(map, 0, new HashSet<>());
         return res;
     }
-    public void dfs( Map<Integer, List<Integer>> map, int cur, Set<Integer> vis){
-        if (!vis.add(Math.abs(cur))) return;
+    static void dfs( Map<Integer, List<Integer>> map, int cur, Set<Integer> vis){
+        if(vis.contains(Math.abs(cur))) return;
+        vis.add(Math.abs(cur));
+       // if (!vis.add(Math.abs(cur))) return;
         if (cur>0) res++;
         for (int next: map.get(Math.abs(cur))){
             dfs(map, next, vis);

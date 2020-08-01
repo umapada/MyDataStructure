@@ -39,19 +39,16 @@ class KokoEatingBananas {
     static int minEatingSpeed(int[] piles, int H) {
         int left = 1;
         int right = 0;
-
         for(int pp:piles){
             right = Math.max(right, pp);
         }
-
         while (left < right) {
             int mid = (left + right ) / 2;
             int total = 0;
 
             for (int p : piles) {
-                total = total +  (p + mid -1) / mid;
+                total += (p + mid -1) / mid;
             }
-
             if (total > H) {
                 left = mid + 1;
             }
@@ -59,7 +56,6 @@ class KokoEatingBananas {
                 right = mid;
             }
         }
-
         return left;
     }
 }

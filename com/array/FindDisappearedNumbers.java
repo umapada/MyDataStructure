@@ -21,7 +21,12 @@ import java.util.List;
 
 class FindDisappearedNumbers {
     //IMP
-    public List<Integer> findDisappearedNumbers(int[] nums) {
+
+    public static void main(String[] args) {
+        int [] n = {4,3,2,7,8,2,3,1};
+        findDisappearedNumbers(n);
+    }
+    static List<Integer> findDisappearedNumbers(int[] nums) {
 
         // Iterate over each of the elements in the original array
         for (int i = 0; i < nums.length; i++) {

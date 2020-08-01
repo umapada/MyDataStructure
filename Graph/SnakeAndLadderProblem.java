@@ -39,12 +39,7 @@ import java.util.Queue;
 
 public class SnakeAndLadderProblem {
 
-    // An entry in queue used in BFS
-    static class qentry
-    {
-        int v;// Vertex number
-        int dist;// Distance of this vertex from source
-    }
+
 
     public static void main(String[] args)
     {
@@ -76,8 +71,8 @@ public class SnakeAndLadderProblem {
     static int getMinDiceThrows(int move[], int n)
     {
         int visited[] = new int[n];
-        Queue<qentry> q = new LinkedList<>();
-        qentry qe = new qentry();
+        Queue<Qentry> q = new LinkedList<>();
+        Qentry qe = new Qentry();
         qe.v = 0;
         qe.dist = 0;
 
@@ -103,7 +98,7 @@ public class SnakeAndLadderProblem {
                 if (visited[j] == 0)
                 {
                     // Otherwise calculate its distance and mark it as visited
-                    qentry a = new qentry();
+                    Qentry a = new Qentry();
                     a.dist = (qe.dist + 1);
                     visited[j] = 1;
 
@@ -126,4 +121,11 @@ public class SnakeAndLadderProblem {
      * Time complexity of the above solution is O(N) as every cell is added and removed only once from queue. And a
      * typical enqueue or dequeue operation takes O(1) time.
      */
+}
+
+// An entry in queue used in BFS
+class Qentry
+{
+    int v;// Vertex number
+    int dist;// Distance of this vertex from source
 }

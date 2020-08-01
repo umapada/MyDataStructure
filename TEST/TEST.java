@@ -1,6 +1,6 @@
 package TEST;
 
-
+//00000010100101000001111010011100
 import java.util.*;
 
 class TEST {
@@ -8,28 +8,28 @@ class TEST {
     int i = Integer.MIN_VALUE;
 
     public static void main(String[] nums) {
+      String s = "   +0 123";
+      s = s.replaceAll("\\s", "");
 
-        LinkedList<Integer> list = new LinkedList<>();
-
-        PriorityQueue<Integer> Q = new PriorityQueue<>();
-
-        long l = new Date().getTime();
-
-        String paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.";
-
-        paragraph =  paragraph.replace(',',' ');
-        paragraph =  paragraph.replace('.',' ');
-
-        List<Integer> ll = new ArrayList<>();
+        System.out.println(s);
 
 
+    }
 
-
-        String[] spl = paragraph.split(" ");
-        char[] chr = paragraph.toCharArray();
-        for(String str:spl){
-            System.out.println(str);
+    public boolean wordBreak(String s, List<String> wordDict) {
+        //Input: s = "leetcode", wordDict = ["leet", "code"]
+        //Output: true
+        boolean [] b = new boolean[s.length()+1];
+        b[0] = true;
+        for(int i=0; i<=s.length(); i++){
+            for(int j=0; j< i; j++){
+                String st = s.substring(j,i);
+                if(b[j] && wordDict.contains(s.substring(j,i))){
+                    b[i] = true;
+                }
+            }
         }
+        return b[s.length()];
     }
 }
 

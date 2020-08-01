@@ -50,7 +50,6 @@ class ChocolateDivide {
     static int maximizeSweetness(int[] A, int K) {
         int left = 1;
         int right = 1000000000 / (K + 1);
-
         while (left < right) {
             int mid = (left + right + 1) / 2;
             int cur = 0, cuts = 0;

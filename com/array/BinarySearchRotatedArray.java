@@ -11,6 +11,8 @@ public class BinarySearchRotatedArray {
       //  System.out.println(bsearch(arr, 7));
         int low = 8, high = 9;
         System.out.println(low + ((high - low) >> 1));
+
+
     }
 
 

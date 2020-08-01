@@ -19,7 +19,12 @@ import java.util.List;
 
 class Permutations_WithRepeat {
 
-    public List<List<Integer>> permuteUnique(int[] nums) {
+    public static void main(String[] args) {
+        int [] arr = {1,1,2};
+        System.out.println(permuteUnique(arr));
+    }
+
+    static List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
         boolean [] used = new boolean[nums.length];
@@ -27,7 +32,7 @@ class Permutations_WithRepeat {
         return list;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, boolean [] used){
+    static void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, boolean [] used){
         if(tempList.size() == nums.length){
             list.add(new ArrayList<>(tempList));
         } else{

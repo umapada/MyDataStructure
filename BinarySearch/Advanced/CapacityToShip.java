@@ -74,25 +74,20 @@ class CapacityToShip {
 
     static int shipWithinDays(int[] weights, int D) {
         int left = 0, right = 0;
-
         for (int w: weights) {
             left = Math.max(left, w);
             right += w;
         }
-
         while (left < right) {
             int mid = (left + right) / 2, need = 1, cur = 0;
-
             for (int w: weights) {
-
                 if (cur + w > mid) {
-                    need = need + 1;
+                    need++;
                     cur = 0;
                     if(need>D) break;
                 }
                 cur = cur + w;
             }
-
             if (need > D) {
                 left = mid + 1;
             }
