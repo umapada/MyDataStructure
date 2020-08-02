@@ -16,43 +16,34 @@ public class Elevator {
     private Door door = Door.CLOSED;
     private Thread processingThread;
     private Thread listeningThread;
-
     public class Request {
         public long time;
         public Integer floor;
         public Direction direction;
-
         public Request(long time, Integer floor, Direction direction) {
             this.time = time;
             this.floor = floor;
             this.direction = direction;
         }
     }
-
     public enum Direction {
         UP, DOWN
     }
-
     public enum State {
         MOVING, STOPPED
     }
-
     public enum Door {
         OPEN, CLOSED
     }
-
     public Comparator<Request> upComparator = new Comparator<Request>() {
         public int compare(Request u1, Request u2) {
             return u1.floor.compareTo(u2.floor);
         }
     };
-
     public Comparator<Request> downComparator = upComparator.reversed();
-
     private Queue<Request> upQueue = new PriorityQueue<>(upComparator);
     private Queue<Request> currentQueue = upQueue;
     private Queue<Request> downQueue = new PriorityQueue<>(downComparator);
-
     public void call(int floor, Direction direction) {
         if (direction == Direction.UP) {
             if (floor >= location) {
@@ -96,7 +87,6 @@ public class Elevator {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
@@ -160,7 +150,6 @@ public class Elevator {
                     thread.start();
                 }
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
 
@@ -193,7 +182,6 @@ public class Elevator {
                     }
                 }
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

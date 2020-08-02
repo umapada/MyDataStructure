@@ -11,12 +11,10 @@ it is sometimes important to find next node in sorted order.
 public class Inorder_Successor {
 
     TreeNode inOrderSuccessor(TreeNode root, TreeNode n) {
-
         // step 1 of the above algorithm
         if (n.right != null) {
             return minValue(n.right);
         }
-
         // step 2 of the above algorithm
         TreeNode p = n.parent;
         while (p != null && n == p.right) {

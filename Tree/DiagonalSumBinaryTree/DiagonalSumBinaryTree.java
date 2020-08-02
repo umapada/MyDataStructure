@@ -86,7 +86,8 @@ class DiagonalSumBinaryTree
             // and so on
             while (curr != null)
             {
-                int prevSum = (map.get(vd) == null)? 0: map.get(vd);
+                int prevSum = map.getOrDefault(vd,0);
+             //   int prevSum = (map.get(vd) == null)? 0: map.get(vd);
                 map.put(vd, prevSum + curr.data);
 
                 // If for any node the left child is not null add

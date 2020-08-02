@@ -70,6 +70,11 @@ public class BottomViewBinaryTree
         BottomViewBinaryTree tree = new BottomViewBinaryTree(root);
         System.out.println("Bottom view of the given binary tree:");
         tree.bottomView();
+
+       // bottomViewdfs(root,0);
+        dfsMap.keySet().stream().forEach(x->{
+            System.out.print(dfsMap.get(x) + " ");
+        });
     }
 
 
@@ -81,6 +86,15 @@ public class BottomViewBinaryTree
         root = node;
     }
 
+    static Map<Integer, Integer> dfsMap = new TreeMap<>();
+    static void bottomViewdfs(TreeNode root, int d){
+        if(root == null) return;
+        dfsMap.put(d, root.data);
+        bottomViewdfs(root.left, d-1);
+        bottomViewdfs(root.right,d+1);
+    }
+
+    // Will not work, BFS for bottomview
     // Method that prints the bottom view.
     public void bottomView()
     {
@@ -126,7 +140,11 @@ public class BottomViewBinaryTree
             }
         }
 
-        map.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(x->{
+        map.keySet().stream().forEach(x->{
+            System.out.print(map.get(x) + " ");
+        });
+        System.out.println();
+        map.entrySet().stream().sorted(Map.Entry.comparingByKey()).limit(3).forEach(x->{
             System.out.print(x.getValue() + " ");
         });
 
