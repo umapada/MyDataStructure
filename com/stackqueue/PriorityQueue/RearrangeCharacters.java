@@ -67,7 +67,7 @@ public class RearrangeCharacters {
         // 'str' that will store resultant value
         str = "";
         // work as the previous visited element initial previous element be. ( '#' and it's frequency '-1' )
-        Ele prev = new Ele('#', -1);
+        Ele prev = new Ele(' ', -1);
         // traverse queue
         while (pq.size() != 0) {
             // pop top element from queue and add it to string.
