@@ -23,8 +23,10 @@ import java.util.List;
 public class CombinationSum1 {
 
     public static void main(String[] args) {
-        int [] arr = {2,3,6,7};
-        combinationSum(arr,7).stream().forEach(System.out::println);
+       // int [] arr = {2,3,6,7};
+        int [] arr = {1,1,2,3};
+
+        combinationSum(arr,4).stream().forEach(System.out::println);
     }
 
      static List<List<Integer>> combinationSum(int[] candidates, int target) {

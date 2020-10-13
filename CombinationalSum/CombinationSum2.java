@@ -20,8 +20,9 @@ import java.util.List;
 public class CombinationSum2 {
 
     public static void main(String[] args) {
-        int [] arr = {2,2,3,6,7,4,2};
-        combinationSum2(arr,7).stream().forEach(System.out::println);
+      // int [] arr = {2,2,3,6,7,4,2};
+        int [] arr = {1, 1, 2, 3};
+        combinationSum2(arr,4).stream().forEach(System.out::println);
     }
 
     static List<List<Integer>> combinationSum2(int[] candidates, int target) {

@@ -41,6 +41,7 @@ import java.util.Vector;
 
 // Java program for printing vertical order of a given binary tree
 
+    //TODO It should be implement with BFS, not dfs. With dfs, order not maintained from top to bottom
 public class VerticalOrderPrintTree
 {
     // Utility function to store vertical order in map 'm'
@@ -95,7 +96,7 @@ public class VerticalOrderPrintTree
     public static void main(String[] args) {
 
         // TO DO Auto-generated method stub
-        TreeNode root = new TreeNode(1);
+      /*  TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
@@ -104,6 +105,17 @@ public class VerticalOrderPrintTree
         root.right.right = new TreeNode(7);
         root.right.left.right = new TreeNode(8);
         root.right.right.right = new TreeNode(9);
+        */
+        TreeNode root = new TreeNode(0);
+        root.left = new TreeNode(8);
+        root.right = new TreeNode(1);
+
+        root.right.left = new TreeNode(3);
+        root.right.left.right = new TreeNode(4);
+        root.right.left.right.right = new TreeNode(7);
+
+        root.right.right = new TreeNode(2);
+
         System.out.println("Vertical Order traversal is");
         printVerticalOrder(root);
     }

@@ -28,12 +28,13 @@ public class NQueensProblem {
     public void solve(int N) {
         if (placeQueens(0, N)) {
             //print the result
-            for (int i = 0; i < N; i++) {
+          /*  for (int i = 0; i < N; i++) {
                 for (int j = 0; j < N; j++) {
                     System.out.print(" " + solution[i][j]);
                 }
                 System.out.println();
-            }
+            } */
+            System.out.println("SOLUTION EXISTS");
         } else {
             System.out.println("NO SOLUTION EXISTS");
         }
@@ -67,12 +68,14 @@ public class NQueensProblem {
     // check if queen can be placed at matrix[row][column]
     public boolean canPlace(int[][] matrix, int row, int column) {
         // since we are filling one column at a time, we will check if no queen is placed in that particular row
+        //Check the row
         for (int i = 0; i < column; i++) {
             if (matrix[row][i] == 1) {
                 return false;
             }
         }
         // we are filling one column at a time,so we need to check the upper and diagonal as well check upper diagonal
+        //Upper diagonal
         for (int i = row, j = column; i >= 0 && j >= 0; i--, j--) {
             if (matrix[i][j] == 1) {
                 return false;

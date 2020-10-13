@@ -1,27 +1,49 @@
 package TEST;
 
-//00000010100101000001111010011100
 import java.util.*;
-import java.util.stream.Collectors;
 
 class TEST {
-    static int count = 0;
-    int i = Integer.MIN_VALUE;
+    public static void main(String[] nums) throws Exception{
 
-    public static void main(String[] nums) {
+        PriorityQueue<Node> pq = new PriorityQueue<>((x,y) -> y.weight - x.weight);
+
+        Node [] node = new Node[5];
+        for(int i=0; i< 5; i++){
+            node[i] = new Node(i, i*10);
+            pq.add(node[i]);
+        }
 
 
-        Arrays.bin
 
-        String str = "ABCD";
+        System.out.println("--------------");
+        node[3].weight = 100;
+        node[3].vertex = 999;
 
-        System.out.println(str.substring(1,2));
+      //  pq.remove(node[3]);
+      //  pq.add(node[3]);
+
+        while(!pq.isEmpty()){
+            Node el = pq.poll();
+            System.out.println(el.vertex + " - " + el.weight );
+
+        }
     }
+
 
 }
 
 
+class Node {
+    int vertex, weight;
 
+    public Node(int vertex, int weight) {
+        this.vertex = vertex;
+        this.weight = weight;
+    }
+
+    Node() {
+    }
+};
 
 
 
