@@ -1,5 +1,9 @@
 package Graph;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class TEST1 {
 
 	public static void main(String[] args) {
@@ -11,7 +15,8 @@ public class TEST1 {
 		String b = "AGT";
 		String c = "CGT";
 		boolean found = false;
-		
+		Map<Character, List<Character>> map = new HashMap<>();
+
 		//String pp = "CGTTTTAGTTTTAGTTTTTTTAGTTTTACT";
 		int count = 0;
 		outer:

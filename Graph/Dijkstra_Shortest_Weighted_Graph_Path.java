@@ -5,7 +5,6 @@ import java.util.*;
 // Data structure to store graph edges
 class Edge {
     int source, dest, weight;
-
     public Edge(int source, int dest, int weight) {
         this.source = source;
         this.dest = dest;
@@ -21,9 +20,6 @@ class Edge {
         this.vertex = vertex;
         this.weight = weight;
     }
-
-    Node() {
-    }
 };
 
 // class to represent a graph object
@@ -31,16 +27,13 @@ class GraphD {
     int V;
     // A List of Lists to represent an adjacency list
     List<Edge>[] adjList;
-
     // Constructor
     GraphD(List<Edge> edges, int N) {
         V = N;
         adjList = new ArrayList[N];
-
         for (int i = 0; i < N; i++) {
             adjList[i] = new ArrayList();
         }
-
         // add edges to the undirected graph
         for (Edge edge : edges) {
             adjList[edge.source].add(edge);
@@ -79,12 +72,20 @@ class Dijkstra_Shortest_Weighted_Graph_Path {
                 );
 */
 
-        List<Edge> edges = Arrays.asList(
+      /*  List<Edge> edges = Arrays.asList(
                 new Edge(0, 1, -1), new Edge(0, 2, 4),
                 new Edge(1, 4, 2), new Edge(1, 2, 3), new Edge(1, 3, -2),
                 new Edge(2, 3, 5),
                 new Edge(3, 1, 1),
                 new Edge(4, 3, -8)
+        );
+        */
+
+        List<Edge> edges = Arrays.asList(
+                new Edge(0, 1, -1),
+                new Edge(1, 2, 4),
+                new Edge(2, 3, 2),
+                new Edge(3, 0, 2)
         );
 
         // Set number of vertices in the graph
@@ -93,12 +94,16 @@ class Dijkstra_Shortest_Weighted_Graph_Path {
         // construct graph
         GraphD graph = new GraphD(edges, N);
 
-        dijkstra(graph, 0, N);
+     /*   dijkstra(graph, 0);
         System.out.println("============BELLMAN-FORD=======================");
-        bellmanFord(graph, 0, N, edges);
+        bellmanFord(graph, 0, edges);
         System.out.println("============MINIMUM SPANNING- PRIMS=======================");
 
         minimum_spanning_Prims(graph);
+        */
+        boolean [] visited = new boolean[graph.V];
+        dfs(graph, 0, visited);
+
     }
 
     private static void printRoute(int prev[], int i) {
@@ -108,9 +113,16 @@ class Dijkstra_Shortest_Weighted_Graph_Path {
         printRoute(prev, prev[i]);
         System.out.print(i + " ");
     }
-
-    static void bellmanFord(GraphD graph, int source, int N, List<Edge> edges) {
-
+//B
+    static void bellmanFord(GraphD graph, int source, List<Edge> edges ) {
+        List<Edge> edgeList = new ArrayList<>();
+        for(List<Edge> list: graph.adjList){
+            for(Edge e:list){
+                edgeList.add(e);
+            }
+        }
+        //List<Edge> edges = graph.adjList;
+        int N = graph.V;;
         int prev[] = new int[N];
         prev[source] = -1;
 
@@ -155,12 +167,10 @@ class Dijkstra_Shortest_Weighted_Graph_Path {
         }
     }
 
-    // Run Dijkstra's algorithm on given graph
-    public static void dijkstra(GraphD graph, int source, int N) {// Dijkstra Shortest algorithm for weighted graph
-        // create min heap and push source node having distance 0
-        PriorityQueue<Node> minHeap = new PriorityQueue<>((x, y) -> x.weight - y.weight);
-        minHeap.add(new Node(source, 0));
+    // Dijkstra Shortest algorithm for weighted graph
+    public static void dijkstra(GraphD graph, int source) {
         // set infinite distance from source to v initially
+        int N = graph.V;
         int[] dist = new int[N];
         Arrays.fill(dist, Integer.MAX_VALUE);
         // distance from source to itself is zero
@@ -171,6 +181,9 @@ class Dijkstra_Shortest_Weighted_Graph_Path {
         // stores predecessor of a vertex (to print path)
         int prev[] = new int[N];
         prev[0] = -1;
+        // create min heap and push source node having distance 0
+        PriorityQueue<Node> minHeap = new PriorityQueue<>((x, y) -> x.weight - y.weight);
+        minHeap.add(new Node(source, 0));
         // run till minHeap is not empty
         while (!minHeap.isEmpty()) {
             Node node = minHeap.poll();
@@ -180,10 +193,12 @@ class Dijkstra_Shortest_Weighted_Graph_Path {
                 int v = edge.dest;
                 int weight = edge.weight;
                 // Relaxation step
-                if (!visited[v] && (dist[u] + weight) < dist[v]) {
-                    dist[v] = dist[u] + weight;
-                    prev[v] = u;
-                    minHeap.add(new Node(v, dist[v]));
+                if (!visited[v]) {
+                    if ((dist[u] + weight) < dist[v]) {
+                        dist[v] = dist[u] + weight;
+                        prev[v] = u;
+                        minHeap.add(new Node(v, dist[v]));
+                    }
                 }
             }
         }
@@ -229,6 +244,18 @@ class Dijkstra_Shortest_Weighted_Graph_Path {
             if(parent[i] != -1)
                 System.out.println(i + " =>  " + parent[i]);
         }
+    }
+
+
+
+
+    static void dfs(GraphD graph, int v, boolean [] visited){
+        if(visited[v]) return;
+        visited[v] = true;
+        for(Edge edge: graph.adjList[v]){
+            dfs(graph, edge.dest, visited);
+        }
+        System.out.println(v);
     }
 
 }

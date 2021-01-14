@@ -1,39 +1,58 @@
 package com;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.stream.Collectors;
 
+class TEST{
 
-
-class TEST {
-
-    public static void main(String[] args) {
-          String s =   Integer.toUnsignedString(12,64);
-        System.out.println(s);
+    class Item{
+        int s, e;
+        Item(int s, int e){
+            this.s = s;
+            this.e = e;
+        }
     }
 
-    public int minDistance(String word1, String word2) {
-        //minimum number of operations required to convert word1 to word2
-        // Make word1 > word2
-        int m = word1.length();
-        int n = word2.length();
-        if (n * m == 0) return n + m;
-        int[] dp = new int[n + 1];
-        for(int i = 0;i<n;i++) dp[i] = i;//initialize, compare "" with word2
-        for(int i = 0;i<m;i++){
-            int[] next = new int[n + 1];
-            next[0] = i+1;                 //initialize compare word1 with ""
-            for(int j = 0;j< n;j++){
-                if(word1.charAt(i) == word2.charAt(j)) next[j+1] = dp[j];
-                    // Minimize between replace, delete or insert
-                else next[j+1] = Math.min(next[j],Math.min(dp[j],dp[j+1])) + 1;
-            }
-            dp = next;
+    public static void main(String[] args) {
+        String s = "asbvdf";
+
+        System.out.println( s.substring(1, s.length()-1) );
+
+
+
+    }
+
+    String[] solve(String[] S, int N){
+
+        Map<String, Integer> map = new HashMap<>();
+
+        for(String url:S){
+            map.put(url, map.getOrDefault(url,0)+1);
         }
-        return dp[n];
+
+        List<String> keys = new ArrayList(map.keySet());
+
+        Collections.sort(keys, (x,y) -> {
+            int a = map.get(x);
+            int b = map.get(y);
+            if(a != b) return b-a;
+            return x.compareTo(y);
+        });
+
+        if(N>keys.size()) N = keys.size();
+
+        String ret [] = new String[N];
+        int index = 0;
+
+        while(index <N){
+            ret[index] = keys.get(index);
+            index++;
+        }
+        return ret;
     }
 }

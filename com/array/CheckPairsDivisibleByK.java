@@ -22,8 +22,11 @@ public class CheckPairsDivisibleByK
         // initialize counts of modulus
         int modulusCounts[] = new int[k];
         // For each number in the array, calculate modulus and update relevant count
-        for (int num: nums)
-            modulusCounts[num %k]++;
+        for (int num: nums){
+            int pos = num %k;
+            if(pos <0) pos += k;
+            modulusCounts[pos]++;
+        }
         printArray (modulusCounts, "modulus");
 
         if (modulusCounts[0] % 2 != 0) // As these will not form pair with anyone else

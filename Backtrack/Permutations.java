@@ -22,7 +22,7 @@ import java.util.List;
 public class Permutations {
 
     public static void main(String[] args) {
-        int [] A = {1,2,3};
+        int [] A = {1,2};
         System.out.println(permute(A));
     }
     static List<List<Integer>> permute(int[] nums) {
